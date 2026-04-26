@@ -50,7 +50,7 @@ export default async function ProjectPage({ params }) {
           {/* Bold quote and short summary of the project */}
           <div>
             <h2 className="font-bold text-5xl tracking-[-2px] pb-8">{project.keyQuote}</h2>
-            <strong><div>{project.summary}</div></strong>
+            <div>{project.summary}</div>
           </div>
           {/* Software and Skills Used */}
           <div className="flex gap-2 justify-center">
