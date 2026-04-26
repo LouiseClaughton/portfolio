@@ -11,9 +11,11 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }) {
+  const { slug } = await params;
+
   const res = await client.getEntries({
     content_type: "project",
-    "fields.slug": params.slug,
+    "fields.slug": slug,
   });
 
   const project = res.items[0];

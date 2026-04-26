@@ -27,11 +27,11 @@ export default function Navigation () {
                 : '-translate-y-full pointer-events-none'
             }`}
         >
-            <div className="flex flex-col font-bold text-8xl tracking-[-6px] leading-[110px] text-center">
-                <Link href="/about">About</Link>
-                <Link href="/projects">Projects</Link>
-                <Link href="/interests">Interests</Link>
-                <Link href="/contact">Contact</Link>
+            <div className="flex flex-col font-bold text-8xl tracking-[-6px] leading-[110px] items-center">
+                <div><Link href="/about" className="hover:text-purple-500 transition-colors">About</Link><span className="pl-2">,</span></div>
+                <div><Link href="/projects" className="hover:text-pink-400 transition-colors">Projects</Link><span className="pl-2">,</span></div>
+                <div><Link href="/interests" className="hover:text-purple-500 transition-colors">Interests</Link><span className="pl-2">,</span></div>
+                <div><Link href="/contact" className="hover:text-amber-400 transition-colors">Contact</Link><span className="pl-2">.</span></div>
             </div>
         </div>
     </>
