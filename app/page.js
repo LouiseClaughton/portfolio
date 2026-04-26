@@ -1,16 +1,7 @@
 import Projects from "./components/projects";
 import Navigation from "./components/navigation";
-// import { getPageData } from "@/lib/queries/pages";
 
 export default async function Home() {
-  // const pages = await getPageData();
-
-  // const homepage = pages.find(
-  //   (page) => page.title === "Homepage"
-  // );
-
-  // const featuredProjects = homepage?.featuredProjects || [];
-  // const content = homepage?.content || [];
 
   return (
     <main className="pb-20">

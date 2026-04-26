@@ -26,6 +26,7 @@ function ProjectItem({ project, index }) {
                 date={project.date}
                 image={project.heroImage?.url}
                 role={project.role}
+                href={`/projects/${project.slug}`}
             />
         </div>
     );
