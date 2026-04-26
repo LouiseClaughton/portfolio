@@ -8,6 +8,7 @@ export default async function Home() {
       <Navigation />
 
       <div className="h-screen w-screen flex justify-center items-center">
+        {/* Main title, split into spans for the hover effect */}
         <h1 className="flex flex-col font-bold text-8xl tracking-[-6px] leading-[110px] text-center items-center hover:cursor-pointer">
           <div><span className="hover:text-amber-400 transition-colors">Designer</span>,</div>
           <div><span className="hover:text-purple-500 transition-colors">Developer</span>,</div>
