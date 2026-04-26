@@ -18,9 +18,20 @@ export default function Projects() {
         fetchProjects();
     }, []);
     return (
-        <div>
-            {projects.map(project => (
-                <Card title={project.title} slug={project.slug} date={project.date} />
+        <div className="py-12 px-24 grid grid-cols-2 gap-28">
+            {projects.map((project, index) => (
+                <div
+                    key={project.slug}
+                    className={index % 2 === 0 ? "translate-y-0" : "translate-y-16"}
+                >
+                    <Card
+                        title={project.title}
+                        slug={project.slug}
+                        date={project.date}
+                        image={project.heroImage?.url}
+                        role={project.role}
+                    />
+                </div>
             ))}
         </div>
     )
