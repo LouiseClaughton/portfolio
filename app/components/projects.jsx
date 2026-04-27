@@ -15,9 +15,9 @@ function ProjectItem({ project, index }) {
         <div
             ref={ref}
             className={`
-                transition-all duration-700 ease-out
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-                ${index % 2 === 0 ? "" : "translate-y-16"}
+                md:transition-all md:duration-700 md:ease-out
+                ${isVisible ? "md:opacity-100 md:translate-y-0" : "md:opacity-0 md:translate-y-10"}
+                ${index % 2 === 0 ? "" : "md:translate-y-16"}
             `}
         >
             <ProjectCard
@@ -44,7 +44,7 @@ export default function Projects() {
     }, []);
 
     return (
-        <div className="py-12 px-24 grid grid-cols-2 gap-28">
+        <div className="py-12 px-12 md:px-24 flex flex-col md:grid md:grid-cols-2 gap-14 md:gap-28">
             {projects.map((project, index) => (
                 <ProjectItem
                     key={project.slug}
