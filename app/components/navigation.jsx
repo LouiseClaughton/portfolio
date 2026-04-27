@@ -56,7 +56,7 @@ export default function Navigation () {
             }`}
         >
             {/* Main links - style matches homepage title */}
-            <div className="flex flex-col font-bold text-8xl tracking-[-6px] leading-[110px] items-center">
+            <div className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-6px] leading-[60px] md:leading-[110px] items-center">
                 <div><Link href="/about" onClick={() => setOpen(false)} className="hover:text-purple-500 transition-colors">About</Link><span className="pl-2">,</span></div>
                 <div><Link href="/projects" onClick={() => setOpen(false)} className="hover:text-pink-400 transition-colors">Projects</Link><span className="pl-2">,</span></div>
                 <div><Link href="/interests" onClick={() => setOpen(false)} className="hover:text-purple-500 transition-colors">Interests</Link><span className="pl-2">,</span></div>
