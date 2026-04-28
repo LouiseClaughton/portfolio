@@ -18,13 +18,18 @@ export const metadata = {
   description: "Hello! I'm Louise, a web designer and developer with a passion for telling stories.",
 };
 
+import Navigation from "./components/navigation";
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${generalSans.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-hidden">
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

@@ -17,7 +17,7 @@ export default function Navigation () {
     // Only show back button if at least 1 segment (e.g. /projects)
     const showBack = segments.length >= 1;
 
-     const handleBack = () => {
+    const handleBack = () => {
         const newPath = "/" + segments.slice(0, -1).join("/");
         router.push(newPath || "/");
     };

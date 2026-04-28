@@ -1,15 +1,20 @@
-import Navigation from "./components/navigation";
 import ArrowDown from "./assets/arrowDown";
 import About from "./components/about";
-import Quote from "./components/quote";
-import Experience from "./components/experience";
-import Interests from "./components/interests";
+import RenderBlock from "@/lib/renderBlock";
 
-export default async function Home() {
+import { client } from "@/lib/contentful";
+
+export default async function HomePage() {
+  const res = await client.getEntries({
+    content_type: "page",
+    "fields.isHomepage": true,
+    include: 2,
+  });
+
+  const page = res.items[0];
 
   return (
     <main className="pb-20">
-      <Navigation />
 
       <div className="h-screen w-screen flex justify-center items-center relative">
         {/* Main title, split into spans for the hover effect */}
@@ -23,10 +28,13 @@ export default async function Home() {
         </a>
       </div>
 
-      <About />
-      <Quote />
-      <Experience />
-      <Interests />
+      {page?.fields?.stickyContent &&
+        <About page={page}/>
+      }
+
+      {page.fields.content.map((block) => (
+        <RenderBlock key={block.sys.id} block={block} />
+      ))}
 
     </main>
   );
