@@ -6,7 +6,7 @@ import { client } from "@/lib/graphql";
 import ProjectCard from "./projectCard";
 import { fadeInView } from "@/lib/scrollFade";
 
-function ProjectItem({ project, index }) {
+function ProjectItem({ project, index, grid }) {
     const [ref, isVisible] = fadeInView({
         threshold: 0.15,
     });
@@ -15,9 +15,12 @@ function ProjectItem({ project, index }) {
         <div
             ref={ref}
             className={`
-                md:transition-all md:duration-700 md:ease-out
-                ${isVisible ? "md:opacity-100 md:translate-y-0" : "md:opacity-0 md:translate-y-10"}
-                ${index % 2 === 0 ? "" : "md:translate-y-16"}
+                ${grid ?
+                    `md:transition-all md:duration-700 md:ease-out
+                    ${isVisible ? "md:opacity-100 md:translate-y-0" : "md:opacity-0 md:translate-y-10"}
+                    ${index % 2 === 0 ? "" : "md:translate-y-16"}`
+                : ''
+                }
             `}
         >
             <ProjectCard
@@ -32,7 +35,7 @@ function ProjectItem({ project, index }) {
     );
 }
 
-export default function Projects() {
+export default function Projects({ grid = true }) {
     const [projects, setProjects] = React.useState([]);
 
     React.useEffect(() => {
@@ -44,12 +47,13 @@ export default function Projects() {
     }, []);
 
     return (
-        <div className="py-12 px-12 md:px-24 flex flex-col md:grid md:grid-cols-2 gap-14 md:gap-28">
+        <div className={`py-12 ${grid ? 'md:grid md:grid-cols-2 gap-14 md:gap-28 px-12 md:px-24' : 'flex flex-col gap-12 md:gap-20'}`}>
             {projects.map((project, index) => (
                 <ProjectItem
                     key={project.slug}
                     project={project}
                     index={index}
+                    grid={grid}
                 />
             ))}
         </div>

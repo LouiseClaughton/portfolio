@@ -17,4 +17,5 @@ body {
   background: #F0F0F0;
   color: #0a0a0a;
   font-family: var(--font-general-sans);
+  scroll-behavior: smooth;
 }
