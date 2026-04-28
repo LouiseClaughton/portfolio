@@ -28,14 +28,12 @@ export default async function HomePage() {
         </a>
       </div>
 
-      {page?.fields?.stickyContent &&
-        <About page={page}/>
-      }
-
-      {page.fields.content.map((block) => (
-        <RenderBlock key={block.sys.id} block={block} />
-      ))}
-
+      <div id="about">
+          {page.fields.content.map((block) => (
+              <RenderBlock key={block.sys.id} block={block} />
+            ))}
+      </div>
+      
     </main>
   );
 }

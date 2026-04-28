@@ -2,6 +2,7 @@ import { client } from "@/lib/contentful";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import RenderBlock from "@/lib/renderBlock";
+import ArrowUpRight from "@/app/assets/arrowUpRight";
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
@@ -37,8 +38,8 @@ export default async function ProjectPage({ params }) {
       </div>
 
       {/* Main */}
-      <div className="px-12 md:px-24">
-        <div className="flex flex-col md:grid md:grid-cols-[2fr_1fr] text-center md:text-left">
+      <div className="px-12 md:px-24 py-12 md:py-24">
+        <div className="flex flex-col md:grid md:grid-cols-[2fr_1fr] text-center md:text-left md:gap-28">
           <div className="pb-12 md:pb-0">
             <h2 className="font-bold text-4xl tracking-[-2px] pb-8">
               {fields.keyQuote}
@@ -47,15 +48,31 @@ export default async function ProjectPage({ params }) {
             <div>{fields.summary}</div>
           </div>
 
-          <div className="flex gap-2 justify-center flex-wrap">
-            {fields.software?.map((item) => (
-              <div
-                key={item}
-                className="rounded-full border border-black w-fit h-fit py-2 px-4"
-              >
-                {item}
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
+              <span className="font-bold">Systems</span>
+              <div className="flex gap-2 flex-wrap justify-center md:justify-start">
+                {fields?.software?.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-black w-fit h-fit py-2 px-4"
+                  >
+                    {item}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="flex flex-col gap-2">
+                <span className="font-bold">Links</span>
+                <div className="flex justify-center md:justify-start">
+                  {fields?.projectLink &&
+                    <a href={fields.projectLink} target="_blank" className="rounded-full border border-black w-fit h-fit py-2 px-4 flex items-center gap-4">
+                        <span>Site</span>
+                        <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  }
+                </div>
+            </div>
           </div>
         </div>
       </div>

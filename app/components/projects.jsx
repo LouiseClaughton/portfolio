@@ -36,7 +36,7 @@ function ProjectItem({ project, index, grid }) {
 export default function Projects({ grid = true, projects = [] }) {
     console.log('Projects: ', projects);
     return (
-        <div className={`py-12 ${grid ? 'md:grid md:grid-cols-2 gap-14 md:gap-28 px-12 md:px-24' : 'flex flex-col gap-12 md:gap-20'}`}>
+        <div className={`py-12 ${grid ? 'flex flex-col md:grid md:grid-cols-2 gap-14 md:gap-28 px-12 md:px-24' : 'flex flex-col gap-12 md:gap-20'}`}>
             {projects.map((project, index) => (
                 <ProjectItem
                     key={project.sys.id}

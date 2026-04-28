@@ -24,7 +24,7 @@ export default function Navigation () {
 
     return (
         <>
-        <div className="fixed inset-0 h-20 z-99">
+        <div className="fixed inset-0 h-20 z-99 bg-[#F0F0F0] md:bg-transparent">
 
             {/* Main Menu button */}
             <div className="flex justify-center">

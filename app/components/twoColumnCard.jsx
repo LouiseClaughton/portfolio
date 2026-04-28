@@ -4,7 +4,7 @@ import { useState } from "react";
 import Projects from "./projects";
 import Image from "next/image";
 
-export default function TwoColumnCard({ block }) {
+export default function TwoColumnCard({ block, id }) {
     const [loaded, setLoaded] = useState(false);
     const fields = block?.fields;
 
@@ -39,18 +39,29 @@ export default function TwoColumnCard({ block }) {
     );
 
     return (
-        <div className="w-screen flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-24 px-12 md:px-24 py-24">
-            {fields?.columnLayout === "Text Left" ? (
-                <>
+        <div
+            id={id}
+            className="w-screen flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-24 px-12 md:px-24 py-12 md:py-24"
+        >
+            <div
+                className={`${
+                fields?.columnLayout === "Text Left"
+                    ? "md:order-1"
+                    : "md:order-2"
+                } order-1`}
+            >
                 {TextContent}
+            </div>
+
+            <div
+                className={`${
+                fields?.columnLayout === "Text Left"
+                    ? "md:order-2"
+                    : "md:order-1"
+                } order-2`}
+            >
                 {ImageContent}
-                </>
-            ) : (
-                <>
-                {ImageContent}
-                {TextContent}
-                </>
-            )}
+            </div>
         </div>
     );
 }
