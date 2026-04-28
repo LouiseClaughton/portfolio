@@ -1,75 +1,69 @@
-import { client } from "@/lib/graphql";
-import { gql } from "graphql-request";
-import Navigation from "@/app/components/navigation";
+import { client } from "@/lib/contentful";
+import { notFound } from "next/navigation";
 import Link from "next/link";
+import RenderBlock from "@/lib/renderBlock";
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
 
-  {/* Get the project details by matching the slug */}
-  const GET_PROJECT_BY_SLUG = gql`
-    query ProjectBySlug($slug: String!) {
-      projectCollection(where: { slug: $slug }, limit: 1) {
-        items {
-          title
-          slug
-          date
-          role
-          software
-          keyQuote
-          summary
-          testimonial
-          testimonialAuthor
-          projectLink
-        }
-      }
-    }
-  `;
+  const res = await client.getEntries({
+    content_type: "project",
+    "fields.slug": slug,
+    include: 3,
+    limit: 1,
+  });
 
-  const projectData = await client.request(GET_PROJECT_BY_SLUG, { slug });
-  const project = projectData.projectCollection.items[0];
+  const project = res.items[0];
 
-  {/* Convert the date into only the year */}
-  const year = new Date(project.date).getFullYear();
+  if (!project) return notFound();
+
+  const fields = project.fields;
+  const year = new Date(fields.date).getFullYear();
 
   return (
     <main className="pb-20">
-      <Navigation />
 
-      {/* Project Title and Role */}
-      <div className="h-screen w-screen flex flex-col justify-center items-center ">
-        <Link href={project.projectLink ? project.projectLink : ''}><h1 className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-6px] leading-[60px] md:leading-[110px] text-center items-center">{project.title}</h1></Link>
-        <span className="text-gray-600">{project.role} / {year}</span>
+      {/* Hero */}
+      <div className="h-screen w-screen flex flex-col justify-center items-center">
+        <Link href={fields.projectLink || "#"}>
+          <h1 className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-6px] leading-[60px] md:leading-[110px] text-center items-center">
+            {fields.title}
+          </h1>
+        </Link>
+
+        <span className="text-gray-600">
+          {fields.role} / {year}
+        </span>
       </div>
 
-      {/* Start of main content */}
+      {/* Main */}
       <div className="px-12 md:px-24">
-
-        {/* Introduction */}
-        <div className='flex flex-col md:grid md:grid-cols-[2fr_1fr] text-center md:text-left'>
-          {/* Bold quote and short summary of the project */}
+        <div className="flex flex-col md:grid md:grid-cols-[2fr_1fr] text-center md:text-left">
           <div className="pb-12 md:pb-0">
-            <h2 className="font-bold text-4xl tracking-[-2px] pb-8">{project.keyQuote}</h2>
-            <div>{project.summary}</div>
+            <h2 className="font-bold text-4xl tracking-[-2px] pb-8">
+              {fields.keyQuote}
+            </h2>
+
+            <div>{fields.summary}</div>
           </div>
-          {/* Software and Skills Used */}
-          <div className="flex gap-2 justify-center">
-            {Object.values(project.software).map((item) => (
-              <div className="rounded-full border border-black w-fit h-fit py-2 px-4" key={item}>{item}</div>
+
+          <div className="flex gap-2 justify-center flex-wrap">
+            {fields.software?.map((item) => (
+              <div
+                key={item}
+                className="rounded-full border border-black w-fit h-fit py-2 px-4"
+              >
+                {item}
+              </div>
             ))}
           </div>
-      </div>
-      {/* Show a testimonial if there is one */}
-      {project.testimonial && (
-        <div className="flex mt-28">
-          <strong><span className="font-bold text-5xl md:text-8xl">"</span></strong>
-          <div className="mt-4 ml-4 flex flex-col font-normal">
-            {project.testimonial}
-            <span className="italic mt-4">{project.testimonialAuthor}</span>
-          </div>
         </div>
-      )}
       </div>
+
+      {/* Dynamic Content Blocks */}
+      {fields.content?.map((block) => (
+        <RenderBlock key={block.sys.id} block={block} />
+      ))}
     </main>
   );
 }
