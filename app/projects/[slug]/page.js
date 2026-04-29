@@ -49,20 +49,23 @@ export default async function ProjectPage({ params }) {
           </div>
 
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-2">
-              <span className="font-bold">Systems</span>
-              <div className="flex gap-2 flex-wrap justify-center md:justify-start">
-                {fields?.software?.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-full border border-black w-fit h-fit py-2 px-4"
-                  >
-                    {item}
-                  </div>
-                ))}
+            {fields?.software &&
+              <div className="flex flex-col gap-2">
+                <span className="font-bold">Systems</span>
+                <div className="flex gap-2 flex-wrap justify-center md:justify-start">
+                  {fields?.software?.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-full border border-black w-fit h-fit py-2 px-4"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-2">
+            }
+            {fields?.projectLink &&
+              <div className="flex flex-col gap-2">
                 <span className="font-bold">Links</span>
                 <div className="flex justify-center md:justify-start">
                   {fields?.projectLink &&
@@ -72,7 +75,8 @@ export default async function ProjectPage({ params }) {
                     </a>
                   }
                 </div>
-            </div>
+              </div>
+            }
           </div>
         </div>
       </div>
