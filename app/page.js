@@ -1,5 +1,4 @@
 import ArrowDown from "./assets/arrowDown";
-import About from "./components/about";
 import RenderBlock from "@/lib/renderBlock";
 
 import { client } from "@/lib/contentful";
@@ -14,26 +13,34 @@ export default async function HomePage() {
   const page = res.items[0];
 
   return (
-    <main className="pb-20">
-
-      <div className="h-screen w-screen flex justify-center items-center relative">
+    <main className="pb-20 bg-white">
+      <div className="h-screen w-screen flex justify-center items-center relative bg-gradient-to-b from-[#54B2F8] to-[#A7D2FD] text-white">
         {/* Main title, split into spans for the hover effect */}
-        <h1 className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-6px] leading-[80px] md:leading-[110px] text-center items-center hover:cursor-pointer">
-          <div><span className="hover:text-amber-400 transition-colors">Designer</span>,</div>
-          <div><span className="hover:text-purple-500 transition-colors">Developer</span>,</div>
-          <div><span className="hover:text-pink-400 transition-colors">Storyteller</span>.</div>
+        <h1 className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-4px] leading-[80px] md:leading-[110px] text-center items-center text-black hover:cursor-pointer">
+          <a href="/projects"><div><span className="hover:text-[#BFE1FE] transition-colors">Designer</span>,</div></a>
+          <a href="/projects"><div><span className="hover:text-[#0092FF] transition-colors">Developer</span>,</div></a>
+          <a href="/interests"><div><span className="hover:text-white transition-colors">Storyteller</span>.</div></a>
         </h1>
-        <a href="#about" className="absolute bottom-4 border border-black rounded-full p-2 hover:cursor-pointer">
-          <ArrowDown />
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 left-[-6%]"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-0 top-[-5%]"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[5%] bottom-[-5%]"></div>
+        <a
+          href="#about"
+          className="absolute bottom-12 flex items-center justify-center p-3 group hover:cursor-pointer"
+        >
+          {/* Spinning border */}
+          <span className="absolute inset-0 rounded-full border border-dashed border-black animate-[spin_10s_linear_infinite]"></span>
+
+          {/* Static icon */}
+          <ArrowDown className="relative z-10 transition-transform duration-300 group-hover:translate-y-1 text-black" />
         </a>
       </div>
 
-      <div id="about">
+      <div id="about" className="bg-gradient-to-b from-[#A7D2FD] to-[#FFFFFF]">
           {page.fields.content.map((block) => (
               <RenderBlock key={block.sys.id} block={block} />
             ))}
       </div>
-      
     </main>
   );
 }
