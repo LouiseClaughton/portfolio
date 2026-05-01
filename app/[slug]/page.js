@@ -20,9 +20,9 @@ export default async function DynamicPage({ params }) {
     return (
         <main>
             <div className="h-screen w-screen flex justify-center items-center relative bg-gradient-to-b from-[#54B2F8] to-[#A7D2FD]">
-                <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 left-[-6%]"></div>
-                <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-0 top-[-5%]"></div>
-                <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[5%] bottom-[-5%]"></div>
+                <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 left-[-6%] hidden md:block"></div>
+                <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[-30%] md:right-0 top-[-5%]"></div>
+                <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 left-[-10%] bottom-[-5%] md:right-[5%]"></div>
                 {/* Main title */}
                 <h1 className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-6px] leading-[80px] md:leading-[110px] text-center items-center hover:cursor-pointer">{page?.fields?.title}</h1>
                 {page?.fields?.relativeLink &&

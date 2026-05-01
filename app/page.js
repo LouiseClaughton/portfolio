@@ -21,9 +21,9 @@ export default async function HomePage() {
           <a href="/projects"><div><span className="hover:text-[#0092FF] transition-colors">Developer</span>,</div></a>
           <a href="/interests"><div><span className="hover:text-white transition-colors">Storyteller</span>.</div></a>
         </h1>
-        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 left-[-6%]"></div>
-        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-0 top-[-5%]"></div>
-        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[5%] bottom-[-5%]"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 left-[-6%] hidden md:block"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[-30%] md:right-0 top-[-5%]"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 left-[-10%] bottom-[-5%] md:right-[5%]"></div>
         <a
           href="#about"
           className="absolute bottom-12 flex items-center justify-center p-3 group hover:cursor-pointer"

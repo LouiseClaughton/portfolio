@@ -26,9 +26,9 @@ export default async function ProjectPage({ params }) {
 
       {/* Hero */}
       <div className="h-screen w-screen flex flex-col justify-center items-center bg-gradient-to-b from-[#54B2F8] to-[#A7D2FD]">
-        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 top-[15%] left-[-6%]"></div>
-        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[-10%] top-[-5%]"></div>
-        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[10%] bottom-[-5%]"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 top-[15%] left-[-6%] hidden md:block"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[-10%] top-[12%] md:top-[-5%]"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 bottom-0 left-[-30%] md:right-[10%] md:bottom-[-5%]"></div>
         <Link href={fields.projectLink || "#"}>
           <h1 className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-6px] leading-[60px] md:leading-[110px] text-center items-center mb-4">
             {fields.title}
