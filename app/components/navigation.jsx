@@ -30,7 +30,9 @@ export default function Navigation () {
             <div className="flex justify-center">
                 <button 
                     className={`absolute top-4 z-50 rounded-3xl border border-black py-2 px-4 transition-colors hover:cursor-pointer
-                        ${open ? 'bg-[#E6E0DA] hover:bg-[#F0F0F0]' : 'bg-[#F0F0F0] hover:bg-[#E6E0DA]'}
+                        ${open ? 
+                            "bg-[#E6E0DA] hover:bg-[#F0F0F0]" : "bg-[#BFE1FE] hover:bg-[#FFFFFF]"
+                        }
                     `}
                     onClick={() => setOpen(!open)}
                 >

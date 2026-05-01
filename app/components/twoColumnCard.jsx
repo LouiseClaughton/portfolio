@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Projects from "./projects";
 import Image from "next/image";
+import Button from "./button";
 
 export default function TwoColumnCard({ block, id }) {
     const [loaded, setLoaded] = useState(false);
@@ -35,6 +36,16 @@ export default function TwoColumnCard({ block, id }) {
             </h2>
 
             <div className="whitespace-pre-line">{fields?.columnContent}</div>
+
+            <div className="mt-6 flex gap-4">
+                {fields?.button1Text && fields.button1Link && (
+                    <Button buttonLink={fields.button1Link} buttonText={fields.button1Text} backgroundColour='#54B2F8' textColour='#FFFFFF' />
+                )}
+
+                {fields?.button2Text && fields.button2Link && (
+                    <Button buttonLink={fields.button2Link} buttonText={fields.button2Text} backgroundColour='#FFFFFF' textColour='#000000' />
+                )}
+            </div>
         </div>
     );
 
