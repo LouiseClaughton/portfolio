@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${generalSans.variable} h-full antialiased scroll-smooth overflow-x-hidden`}
+      className={`${geistSans.variable} ${geistMono.variable} ${generalSans.variable} h-full antialiased scroll-smooth overflow-x-hidden md:overflow-x-visible`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden">
+      <body className="min-h-full flex flex-col overflow-x-hidden md:overflow-x-visible">
         <Navigation />
         {children}
       </body>
