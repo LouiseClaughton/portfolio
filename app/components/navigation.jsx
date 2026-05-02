@@ -24,7 +24,7 @@ export default function Navigation () {
 
     return (
         <>
-        <div className="fixed inset-0 h-20 z-99 bg-transparent w-screen">
+        <div className="fixed inset-0 h-20 z-99 bg-transparent w-full">
 
             {/* Main Menu button */}
             <div className="flex justify-center">
@@ -50,7 +50,7 @@ export default function Navigation () {
 
         {/* Menu items - hidden originally */}
         <div
-            className={`fixed inset-0 flex items-center w-screen h-screen justify-center bg-[#BFE1FE] z-98
+            className={`fixed inset-0 flex items-center w-full h-screen justify-center bg-[#BFE1FE] z-98
             transition-all duration-500 -translate-y-full
             ${open 
                 ? 'translate-y-0 pointer-events-auto' 

@@ -14,7 +14,7 @@ export default async function HomePage() {
 
   return (
     <main className="pb-20 bg-white">
-      <div className="h-screen w-screen flex justify-center items-center relative bg-gradient-to-b from-[#54B2F8] to-[#A7D2FD] text-white overflow-hidden">
+      <div className="h-screen w-full flex justify-center items-center relative bg-gradient-to-b from-[#54B2F8] to-[#A7D2FD] text-white overflow-hidden">
         {/* Main title, split into spans for the hover effect */}
         <h1 className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-4px] leading-[80px] md:leading-[110px] text-center items-center text-black hover:cursor-pointer">
           <a href="/projects"><div><span className="hover:text-[#BFE1FE] transition-colors">Designer</span>,</div></a>
