@@ -19,6 +19,7 @@ export const metadata = {
 };
 
 import Navigation from "./components/navigation";
+import Footer from "./components/footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );

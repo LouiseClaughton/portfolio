@@ -17,13 +17,13 @@ export default async function HomePage() {
       <div className="h-screen w-full flex justify-center items-center relative bg-gradient-to-b from-[#54B2F8] to-[#A7D2FD] text-white overflow-hidden">
         {/* Main title, split into spans for the hover effect */}
         <h1 className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] md:tracking-[-4px] leading-[80px] md:leading-[110px] text-center items-center text-black hover:cursor-pointer">
-          <a href="/projects"><div><span className="hover:text-[#BFE1FE] transition-colors">Designer</span>,</div></a>
-          <a href="/projects"><div><span className="hover:text-[#0092FF] transition-colors">Developer</span>,</div></a>
-          <a href="/interests"><div><span className="hover:text-white transition-colors">Storyteller</span>.</div></a>
+          <div><span className="hover:text-[#BFE1FE] transition-colors">Designer</span>,</div>
+          <div><span className="hover:text-[#0092FF] transition-colors">Developer</span>,</div>
+          <div><span className="hover:text-white transition-colors">Storyteller</span>.</div>
         </h1>
         <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 left-[-6%] hidden md:block"></div>
         <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[-30%] md:right-0 top-[-5%]"></div>
-        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[5%] bottom-[-5%]"></div>
+        <div className="cloud w-[350px] h-[120px] bg-[#f2f9fe] rounded-full absolute mt-[120px] mx-auto mb-[20px] z-1 opacity-60 right-[5%] bottom-0"></div>
         <a
           href="#about"
           className="absolute bottom-12 flex items-center justify-center p-3 group hover:cursor-pointer"
