@@ -10,12 +10,12 @@ export default function Card({ block }) {
             ${fields?.border ? "border-b-2 border-[#E6E0DA] mx-12 md:mx-24" : "px-12 md:px-24"}
         `}
     >
-      <h2 className="font-bold text-3xl md:text-5xl tracking-[-2px] leading-[40px] md:leading-[110px]">
-        {fields?.title}
+      <h2 className="font-bold text-3xl md:text-5xl leading-[40px] md:leading-[60px] mb-8">
+        {fields.title}
       </h2>
-      {fields?.content && (
+      {fields.content && (
         <div className="text-gray-800 whitespace-pre-line mb-6">
-          {fields?.content}
+          {fields.content}
         </div>
       )}
       {fields?.buttonText && fields.buttonLink && (

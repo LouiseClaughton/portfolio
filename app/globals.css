@@ -3,7 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-general-sans: var(--font-general-sans);
+  --font-gooper: var(--font-gooper);
+  --font-satoshi: var(--font-satoshi);
 }
 
 @theme inline {
@@ -16,8 +17,12 @@
 body {
   background: #F0F0F0;
   color: #0a0a0a;
-  font-family: var(--font-general-sans);
+  font-family: var(--font-satoshi);
   scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, .nav-link {
+	font-family: var(--font-gooper);
 }
 
 .cloud:after, .cloud:before {

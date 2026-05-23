@@ -30,7 +30,7 @@ export default function TwoColumnCard({ block, id }) {
     );
 
     const TextContent = (
-        <div className={`${fields?.style === "Sticky" ? "md:sticky top-12" : ""} h-fit`}>
+        <div className={`${fields?.style === "Sticky" ? "md:sticky top-24" : ""} h-fit`}>
             <h2 className="font-bold text-3xl md:text-4xl tracking-[-2px] leading-[80px] md:leading-[110px]">
                 {fields?.columnTitle}
             </h2>
