@@ -35,8 +35,8 @@ export default function ProjectCard({ title, href, image, role, date }) {
                     <div className="w-full h-40 mb-4 bg-gray-400"></div>
                 )}
                 <div>
-                    <h2 className="font-bold text-xl">{title}</h2>
-                    <span className="text-gray-600">{role} / {year}</span>
+                    <h2 className="font-bold text-xl text-white">{title}</h2>
+                    <span className="text-gray-300">{role} / {year}</span>
                 </div>
             </div>
         </Link>

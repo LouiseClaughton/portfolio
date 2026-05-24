@@ -2,6 +2,7 @@ import ArrowDown from "./assets/arrowDown";
 import RenderBlock from "@/lib/renderBlock";
 import Card from "./components/card";
 import FeaturedProjects from "./components/featuredProjects";
+import FeaturedQuotes from "./components/featuredQuotes";
 
 import { client } from "@/lib/contentful";
 
@@ -43,6 +44,12 @@ export default async function HomePage() {
       <div id="projects" className="bg-[#2D2D2D]">
         {page.fields.featuredProjects &&
           <FeaturedProjects projects={page.fields.featuredProjects} />
+        }
+      </div>
+
+      <div id="testimonials" className="bg-[#F9F8F4]">
+        {page.fields.featuredQuotes &&
+          <FeaturedQuotes quotes={page.fields.featuredQuotes} />
         }
       </div>
 
