@@ -1,6 +1,6 @@
 import Button from "./button";
 
-export default function Card({ block }) {
+export default function Card({ block, isEven }) {
   const fields = block?.fields;
 
   return (
@@ -14,7 +14,7 @@ export default function Card({ block }) {
         {fields.title}
       </h2>
       {fields.content && (
-        <div className="text-gray-800 whitespace-pre-line mb-6">
+        <div className="whitespace-pre-line mb-6">
           {fields.content}
         </div>
       )}
@@ -22,8 +22,7 @@ export default function Card({ block }) {
         <Button
           buttonText={fields?.buttonText}
           buttonLink={fields.buttonLink}
-          backgroundColour={fields?.backgroundColour}
-          textColour={fields.textColour}
+          isEven={isEven}
         />
       )}
     </div>

@@ -5,7 +5,7 @@ import Logo from "../assets/logo.png";
 export default function Footer() {
     return (
         <footer
-            className="flex flex-col md:flex-row px-12 py-12 gap-2 md:gap-8 overflow-hidden relative justify-between items-center"
+            className="flex flex-col md:flex-row px-12 py-12 gap-2 md:gap-8 overflow-hidden relative justify-between items-center bg-[#F9F8F4]"
         >
             <a href='/'>
                 <Image src={Logo} alt="Logo" className="w-12 h-12 hover:-translate-y-2 transition-all" />

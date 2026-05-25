@@ -46,7 +46,7 @@ export default function Slider({ content }) {
                                     alt={logo.fields.title}
                                     width={120}
                                     height={60}
-                                    className="object-contain"
+                                    className="object-cover"
                                 />
                             </div>
                         </SwiperSlide>
@@ -68,7 +68,7 @@ export default function Slider({ content }) {
                                     alt={logo.fields.title}
                                     width={120}
                                     height={60}
-                                    className="object-contain"
+                                    className="object-cover rounded-xl"
                                 />
                             </div>
                         </SwiperSlide>

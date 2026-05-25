@@ -88,7 +88,9 @@ export default async function HomePage() {
                 </button>
               </a>
             </div>
-            <FeaturedProjects projects={page.fields.featuredProjects} />
+            <div className="text-white">
+              <FeaturedProjects projects={page.fields.featuredProjects} />
+            </div>
             <svg
               viewBox="0 0 100 24"
               preserveAspectRatio="none"
@@ -147,18 +149,16 @@ export default async function HomePage() {
       </div>
 
       <div id="contact-cta" className="bg-[#2D2D2D]">
-        {page.fields.clients &&
-          <div className="px-24 py-42 flex flex-col items-center gap-12">
-            <h2 className="text-center text-4xl text-white">Ready to get started?</h2>
-            <a href="/contact">
-              <button 
-                  className="z-50 rounded-3xl py-2 px-4 border-2 border-[#2D2D2D] bg-[#F9F8F4] hover:bg-[#67865D] hover:text-white hover:cursor-pointer transition-colors"
-              >
-                  CONTACT
-              </button>
-            </a>
-          </div>
-        }
+        <div className="px-24 py-42 flex flex-col items-center gap-12">
+          <h2 className="text-center text-4xl text-white">Ready to get started?</h2>
+          <a href="/contact">
+            <button 
+                className="z-50 rounded-3xl py-2 px-4 border-2 border-[#2D2D2D] bg-[#F9F8F4] hover:bg-[#67865D] hover:text-white hover:cursor-pointer transition-colors"
+            >
+                CONTACT
+            </button>
+          </a>
+        </div>
       </div>
     </main>
   );

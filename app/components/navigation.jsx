@@ -38,6 +38,7 @@ export default function Navigation () {
             >
                 {/* Main links - style matches homepage title */}
                 <nav className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] leading-[60px] md:leading-[110px] nav-link">
+                    <li className="list-none"><Link href="/" onClick={() => setOpen(false)} className="hover:text-[#67865D] transition-colors">Home</Link><span className="pl-2">,</span></li>
                     <li className="list-none"><Link href="/about" onClick={() => setOpen(false)} className="hover:text-[#744F89] transition-colors">About</Link><span className="pl-2">,</span></li>
                     <li className="list-none"><Link href="/projects" onClick={() => setOpen(false)} className="hover:text-[#67865D] transition-colors">Projects</Link><span className="pl-2">,</span></li>
                     <li className="list-none"><Link href="/interests" onClick={() => setOpen(false)} className="hover:text-[#744F89] transition-colors">Interests</Link><span className="pl-2">,</span></li>
