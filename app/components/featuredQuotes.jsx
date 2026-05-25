@@ -7,7 +7,7 @@ import "swiper/css/bundle";
 
 export default function FeaturedQuotes({ quotes }) {
     return (
-        <div className="bg-[#F9F8F4] p-24">
+        <div className="bg-[#F9F8F4]">
             <Swiper
                 modules={[Autoplay, Pagination]}
                 slidesPerView={1}
@@ -25,8 +25,8 @@ export default function FeaturedQuotes({ quotes }) {
             >
                 {quotes.map((quote) => (
                     <SwiperSlide key={quote.sys.id}>
-                        <div className="flex flex-col items-center justify-center text-center">
-                            <p className="text-xl leading-relaxed">
+                        <div className="flex flex-col items-center justify-center text-center h-48">
+                            <p className="text-xl leading-relaxed quote">
                                 "{quote.fields.content}"
                             </p>
 

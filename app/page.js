@@ -3,6 +3,7 @@ import RenderBlock from "@/lib/renderBlock";
 import Card from "./components/card";
 import FeaturedProjects from "./components/featuredProjects";
 import FeaturedQuotes from "./components/featuredQuotes";
+import Slider from "./components/slider";
 
 import { client } from "@/lib/contentful";
 
@@ -15,13 +16,13 @@ export default async function HomePage() {
   const page = res.items[0];
 
   return (
-    <main className="pb-20 bg-white">
+    <main className="bg-[#F9F8F4]">
       <div className="h-screen w-full flex items-center relative bg-[#2D2D2D] text-white overflow-hidden p-24">
         {/* Main title, split into spans for the hover effect */}
         <h1 className="flex flex-col font-bold text-5xl md:text-8xl leading-[80px] md:leading-[110px] hover:cursor-pointer">
-          <div><span>Designer</span>,</div>
-          <div><span>Developer</span>,</div>
-          <div><span>Storyteller</span>.</div>
+          <div><span className="hover:text-[#67865D] transition-colors">Designer</span>,</div>
+          <div><span className="hover:text-[#744F89] transition-colors">Developer</span>,</div>
+          <div><span className="hover:text-[#67865D] transition-colors">Storyteller</span>.</div>
         </h1>
         <a
           href="#about"
@@ -37,26 +38,71 @@ export default async function HomePage() {
 
       <div id="about" className="bg-[#F9F8F4]">
         {page.fields.about &&
-          <Card block={page.fields.about} />
+          <div className="px-24 py-42">
+            <h2 className="font-bold text-3xl md:text-4xl leading-[40px] md:leading-[60px]">
+              Hello, I’m Louise, a <span className="hover:text-[#744F89] hover:cursor-pointer transition-colors">web designer and developer</span> passionate about the <span className="hover:text-[#67865D] hover:cursor-pointer transition-colors">weird and wonderful</span>. 
+            </h2>
+            <Card block={page.fields.about} />
+          </div>
         }
       </div>
 
       <div id="projects" className="bg-[#2D2D2D]">
         {page.fields.featuredProjects &&
-          <FeaturedProjects projects={page.fields.featuredProjects} />
+          <div className="px-24 py-42 flex flex-col gap-12">
+            <div className="flex justify-between">
+              <h2 className="text-3xl text-white">Featured Work</h2>
+              <a href="/projects">
+                <button 
+                    className="z-50 rounded-3xl py-2 px-4 border-2 border-[#2D2D2D] bg-[#F9F8F4] hover:bg-[#67865D] hover:text-white hover:cursor-pointer transition-colors"
+                >
+                    VIEW MORE
+                </button>
+              </a>
+            </div>
+            <FeaturedProjects projects={page.fields.featuredProjects} />
+          </div>
         }
       </div>
 
       <div id="testimonials" className="bg-[#F9F8F4]">
         {page.fields.featuredQuotes &&
-          <FeaturedQuotes quotes={page.fields.featuredQuotes} />
+          <div className="px-24 py-42">
+            <FeaturedQuotes quotes={page.fields.featuredQuotes} />
+          </div>
         }
       </div>
 
-      <div id="content" className="bg-[#F9F8F4]">
-          {page.fields?.content?.map((block) => (
-            <RenderBlock key={block.sys.id} block={block} />
-          ))}
+      <div id="skills-slider" className="bg-[#2D2D2D]">
+        {page.fields.skills &&
+          <div className="px-24 py-42">
+            <Slider content={page.fields.skills} />
+          </div>
+        }
+      </div>
+
+      <div id="client-slider" className="bg-[#F9F8F4]">
+        {page.fields.clients &&
+          <div className="px-24 py-42 flex flex-col gap-12">
+            <h2 className="text-center text-3xl">Trusted by experts</h2>
+            <Slider content={page.fields.clients} />
+          </div>
+        }
+      </div>
+
+      <div id="contact-cta" className="bg-[#2D2D2D]">
+        {page.fields.clients &&
+          <div className="px-24 py-42 flex flex-col items-center gap-12">
+            <h2 className="text-center text-4xl text-white">Ready to get started?</h2>
+            <a href="/contact">
+              <button 
+                  className="z-50 rounded-3xl py-2 px-4 border-2 border-[#2D2D2D] bg-[#F9F8F4] hover:bg-[#67865D] hover:text-white hover:cursor-pointer transition-colors"
+              >
+                  CONTACT
+              </button>
+            </a>
+          </div>
+        }
       </div>
     </main>
   );

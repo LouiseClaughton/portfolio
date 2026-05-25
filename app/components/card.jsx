@@ -5,9 +5,9 @@ export default function Card({ block }) {
 
   return (
     <div
-      className={`flex flex-col py-24 gap-2 
+      className={`flex flex-col ${fields.title ? 'py-24' : ''} gap-2 
             ${fields?.textAlignment === "Center" ? "text-center items-center" : "text-left"} 
-            ${fields?.border ? "border-b-2 border-[#E6E0DA] mx-12 md:mx-24" : "px-12 md:px-24"}
+            ${fields?.border ? "border-b-2 border-[#E6E0DA] mx-12 md:mx-24" : ""}
         `}
     >
       <h2 className="font-bold text-3xl md:text-5xl leading-[40px] md:leading-[60px] mb-8">
