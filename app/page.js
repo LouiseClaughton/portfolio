@@ -26,7 +26,7 @@ export default async function HomePage() {
         </h1>
         <a
           href="#about"
-          className="absolute bottom-12 flex items-center justify-center p-3 group hover:cursor-pointer"
+          className="absolute bottom-20 flex items-center justify-center p-3 group hover:cursor-pointer"
         >
           {/* Spinning border */}
           <span className="absolute inset-0 rounded-full border border-dashed border-white animate-[spin_10s_linear_infinite]"></span>
@@ -34,20 +34,48 @@ export default async function HomePage() {
           {/* Static icon */}
           <ArrowDown className="relative z-10 transition-transform duration-300 group-hover:translate-y-1 text-white" />
         </a>
+        <svg
+          viewBox="0 0 100 24"
+          preserveAspectRatio="none"
+          className="pointer-events-none absolute bottom-0 left-0 h-16 w-full rotate-180 scale-x-[-1]"
+        >
+          <rect width="100%" height="100%" fill="#F9F8F4"/>
+          <path
+            fill="#2D2D2D"
+            d="
+              M0 12
+              C 25 0, 40 0, 60 12
+              S 100 12, 100 12
+              V24
+              H0
+              Z
+            "
+          />
+        </svg>
       </div>
 
-      <div id="about" className="bg-[#F9F8F4]">
+      <div id="about" className="bg-[#F9F8F4] relative">
         {page.fields.about &&
           <div className="px-24 py-42">
             <h2 className="font-bold text-3xl md:text-4xl leading-[40px] md:leading-[60px]">
               Hello, I’m Louise, a <span className="hover:text-[#744F89] hover:cursor-pointer transition-colors">web designer and developer</span> passionate about the <span className="hover:text-[#67865D] hover:cursor-pointer transition-colors">weird and wonderful</span>. 
             </h2>
             <Card block={page.fields.about} />
+            <div
+              className="
+                pointer-events-none
+                absolute bottom-0 left-0
+                h-6 w-full
+                bg-[url('/waves/short-wave.svg')]
+                bg-repeat-x
+                bg-bottom
+              "
+            />
           </div>
         }
       </div>
 
-      <div id="projects" className="bg-[#2D2D2D]">
+      <div id="projects" className="bg-[#2D2D2D] relative">
         {page.fields.featuredProjects &&
           <div className="px-24 py-42 flex flex-col gap-12">
             <div className="flex justify-between">
@@ -61,6 +89,24 @@ export default async function HomePage() {
               </a>
             </div>
             <FeaturedProjects projects={page.fields.featuredProjects} />
+            <svg
+              viewBox="0 0 100 24"
+              preserveAspectRatio="none"
+              className="pointer-events-none absolute bottom-0 left-0 h-16 w-full rotate-180 scale-x-[-1]"
+            >
+              <rect width="100%" height="100%" fill="#F9F8F4"/>
+              <path
+                fill="#2D2D2D"
+                d="
+                  M0 12
+                  C 25 0, 40 0, 60 12
+                  S 100 12, 100 12
+                  V24
+                  H0
+                  Z
+                "
+              />
+            </svg>
           </div>
         }
       </div>
@@ -81,11 +127,21 @@ export default async function HomePage() {
         }
       </div>
 
-      <div id="client-slider" className="bg-[#F9F8F4]">
+      <div id="client-slider" className="bg-[#F9F8F4] relative">
         {page.fields.clients &&
           <div className="px-24 py-42 flex flex-col gap-12">
             <h2 className="text-center text-3xl">Trusted by experts</h2>
             <Slider content={page.fields.clients} />
+            <div
+              className="
+                pointer-events-none
+                absolute bottom-0 left-0
+                h-6 w-full
+                bg-[url('/waves/short-wave.svg')]
+                bg-repeat-x
+                bg-bottom
+              "
+            />
           </div>
         }
       </div>
