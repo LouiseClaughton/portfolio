@@ -10,7 +10,7 @@ export default function Card({ block, isEven }) {
             ${fields?.border ? "border-b-2 border-[#E6E0DA] mx-12 md:mx-24" : ""}
         `}
     >
-      <h2 className="font-bold text-3xl md:text-5xl leading-[40px] md:leading-[60px] mb-8">
+      <h2 className="font-bold text-3xl md:text-4xl leading-[40px] md:leading-[60px] mb-8">
         {fields.title}
       </h2>
       {fields.content && (

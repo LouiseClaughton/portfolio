@@ -19,9 +19,9 @@ export default async function DynamicPage({ params }) {
 
     return (
         <main>
-            <div className="h-screen w-screen flex items-center relative bg-[#2D2D2D] text-white p-24">
+            <div className="h-screen w-screen flex items-center relative bg-[#1E1E1E] text-white px-12 lg:px-24 py-24 md:py-32 lg:py-42">
                 {/* Main title */}
-                <h1 className="flex flex-col font-bold text-5xl md:text-8xl leading-[80px] md:leading-[110px] hover:cursor-pointer">{page?.fields?.title}</h1>
+                <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[80px] md:leading-[110px] hover:cursor-pointer">{page?.fields?.title}</h1>
                 {page?.fields?.relativeLink &&
                     <a href={`#${page?.fields?.relativeLink}`} className="absolute bottom-4 border border-black rounded-full p-2 hover:cursor-pointer">
                         <ArrowDown />
@@ -34,7 +34,7 @@ export default async function DynamicPage({ params }) {
                     >
                     <rect width="100%" height="100%" fill="#F9F8F4"/>
                     <path
-                        fill="#2D2D2D"
+                        fill="#1e1e1e"
                         d="
                         M0 12
                         C 25 0, 40 0, 60 12
@@ -54,7 +54,7 @@ export default async function DynamicPage({ params }) {
                     return (
                     <div key={block.sys.id} className="relative">
                         {/* Section */}
-                        <div className={`${isEven ? "bg-[#F9F8F4] text-black" : "bg-[#2D2D2D] text-white"} p-24`}>
+                        <div className={`${isEven ? "bg-[#F9F8F4] text-black" : "bg-[#1E1E1E] text-white"} px-12 lg:p-24`}>
                             <RenderBlock block={block} isEven={isEven} />
                         </div>
 
@@ -78,7 +78,7 @@ export default async function DynamicPage({ params }) {
                                     >
                                     <rect width="100%" height="100%" fill="#F9F8F4"/>
                                     <path
-                                        fill="#2D2D2D"
+                                        fill="#1E1E1E"
                                         d="
                                         M0 12
                                         C 25 0, 40 0, 60 12

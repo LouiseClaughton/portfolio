@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { gooper } from './fonts';
 import { satoshi } from './fonts';
+import { caveat } from './fonts';
 
 export const metadata = {
   title: "Louise Claughton - Web Designer and Developer",
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${gooper.variable} ${satoshi.variable} h-full antialiased scroll-smooth overflow-x-hidden`}
+      className={`${gooper.variable} ${satoshi.variable} ${caveat.variable} h-full antialiased scroll-smooth overflow-x-hidden`}
     >
       <body className="min-h-full flex flex-col">
         <Navigation />

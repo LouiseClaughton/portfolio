@@ -5,6 +5,7 @@
   --foreground: #171717;
   --font-gooper: var(--font-gooper);
   --font-satoshi: var(--font-satoshi);
+  --font-caveat: var(--font-caveat);
 }
 
 @theme inline {
@@ -23,6 +24,10 @@ body {
 
 h1, h2, h3, h4, h5, h6, .nav-link, .quote {
 	font-family: var(--font-gooper);
+}
+
+.caption {
+  font-family: var(--font-caveat);
 }
 
 .swiper-pagination-bullet-active {

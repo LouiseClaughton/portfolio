@@ -10,16 +10,16 @@ export default function Navigation () {
 
     return (
         <>
-            <div className="fixed inset-0 h-20 z-99 bg-transparent w-full p-24">
+            <div className="fixed inset-0 h-20 z-99 bg-transparent w-full px-24 py-12">
 
                 {/* Menu button */}
-                <div className="flex justify-between">
+                <div className="flex justify-center items-center lg:justify-start lg:items-start">
                     <button 
-                        className={`absolute top-12 left-24 z-50 rounded-3xl py-2 px-4 transition-colors hover:cursor-pointer border-2 border-[#2D2D2D]
+                        className={`z-50 rounded-3xl py-2 px-4 transition-colors hover:cursor-pointer border-2 border-[#2D2D2D]
                             ${open ? 
                                 "bg-[#2D2D2D] text-white" : "bg-[#F9F8F4]"
                             }
-                            hover:bg-[#744F89] hover:text-white transition-colors
+                            transition-colors
                         `}
                         onClick={() => setOpen(!open)}
                     >
@@ -30,14 +30,14 @@ export default function Navigation () {
 
             {/* Menu items - hidden originally */}
             <div
-                className={`fixed inset-0 flex items-center w-full h-screen bg-[#F9F8F4] z-98 p-24 transition-all duration-500 -translate-y-full
+                className={`fixed inset-0 flex items-center justify-center lg:justify-start w-full h-screen bg-[#F9F8F4] z-98 px-12 lg:px-24 py-24 md:py-32 lg:py-42 transition-all duration-500 -translate-y-full
                 ${open 
                     ? 'translate-y-0 pointer-events-auto' 
                     : '-translate-y-full pointer-events-none'
                 }`}
             >
                 {/* Main links - style matches homepage title */}
-                <nav className="flex flex-col font-bold text-5xl md:text-8xl tracking-[-2px] leading-[60px] md:leading-[110px] nav-link">
+                <nav className="flex flex-col font-bold text-5xl md:text-6xl tracking-[-2px] leading-[60px] md:leading-[80px] nav-link text-center lg:text-left">
                     <li className="list-none"><Link href="/" onClick={() => setOpen(false)} className="hover:text-[#67865D] transition-colors">Home</Link><span className="pl-2">,</span></li>
                     <li className="list-none"><Link href="/about" onClick={() => setOpen(false)} className="hover:text-[#744F89] transition-colors">About</Link><span className="pl-2">,</span></li>
                     <li className="list-none"><Link href="/projects" onClick={() => setOpen(false)} className="hover:text-[#67865D] transition-colors">Projects</Link><span className="pl-2">,</span></li>
