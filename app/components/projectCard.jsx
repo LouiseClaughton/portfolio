@@ -13,7 +13,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
         <Link className="h-full w-full block" href={href ? href : ''}>
             <div className="h-full w-full flex flex-col min-h-[20rem]">
                 {image ? (
-                    <div className="w-full h-80 mb-4 relative bg-gray-800 overflow-hidden rounded-lg hover:shadow-xl hover:-translate-y-2 transition-all">
+                    <div className="w-full h-80 mb-4 relative bg-gray-800 overflow-hidden hover:-translate-y-2 transition-all">
                         
                         {/* Skeleton */}
                         {!loaded && (
@@ -26,7 +26,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
                             alt={title}
                             fill
                             onLoad={() => setLoaded(true)}
-                            className={`object-cover transition-opacity duration-500 object-top ${
+                            className={`object-cover transition-opacity duration-500 object-top rounded-xl ${
                                 loaded ? "opacity-100" : "opacity-0"
                             }`}
                         />
@@ -36,7 +36,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
                 )}
                 <div>
                     <h2 className="font-bold text-xl">{title}</h2>
-                    <span className="text-gray-600">{role} / {year}</span>
+                    <span>{role} / {year}</span>
                 </div>
             </div>
         </Link>
