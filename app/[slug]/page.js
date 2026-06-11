@@ -19,7 +19,7 @@ export default async function DynamicPage({ params }) {
 
     return (
         <main>
-            <div className="h-screen w-screen flex items-center relative bg-[#1E1E1E] text-white px-12 lg:px-24 py-24 md:py-32 lg:py-42">
+            <div className="w-screen flex items-center relative bg-[#1E1E1E] text-white px-12 lg:px-24 py-24 md:py-32 lg:py-42">
                 {/* Main title */}
                 <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[80px] md:leading-[110px] hover:cursor-pointer">{page?.fields?.title}</h1>
                 {page?.fields?.relativeLink &&

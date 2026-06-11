@@ -56,49 +56,6 @@ export default async function HomePage() {
             />
           </svg>
         </div>
-
-        {/* Right side - featured projects in polaroid style */}
-        {/* <div className="w-full h-full flex flex-col lg:flex-row items-center justify-end my-15">
-          <div className="w-[15rem] h-[17rem] bg-white relative -rotate-10 hover:-translate-y-2 transition-transform">
-            <div className="absolute top-4 left-4 w-[90%] h-[75%] bg-black">
-              <Image
-                src={`https:${page.fields.featuredProjects[0].fields.heroImage.fields.file.url}`}
-                alt={page.fields.featuredProjects[0].fields.title}
-                fill
-                className="object-cover object-top-left"
-              />
-            </div>
-            <p className="caption absolute bottom-4 left-[50%] transform -translate-x-[50%] text-black text-lg text-center font-bold">
-              {page.fields.featuredProjects[0].fields.title}
-            </p>
-          </div>
-          <div className="w-[15rem] h-[17rem] bg-white relative rotate-5 lg:-left-5 lg:-bottom-5 hover:-translate-y-2 transition-transform">
-            <div className="absolute top-4 left-4 w-[90%] h-[75%] bg-black">
-              <Image
-                src={`https:${page.fields.featuredProjects[1].fields.heroImage.fields.file.url}`}
-                alt={page.fields.featuredProjects[1].fields.title}
-                fill
-                className="object-cover object-top-left"
-              />
-            </div>
-            <p className="caption absolute bottom-4 left-[50%] transform -translate-x-[50%] text-black text-lg text-center font-bold">
-              {page.fields.featuredProjects[1].fields.title}
-            </p>
-          </div>
-          <div className="w-[15rem] h-[17rem] bg-white relative -rotate-3 lg:-left-5 lg:-top-5 hover:-translate-y-2 transition-transform">
-            <div className="absolute top-4 left-4 w-[90%] h-[75%] bg-black">
-              <Image
-                src={`https:${page.fields.featuredProjects[2].fields.heroImage.fields.file.url}`}
-                alt={page.fields.featuredProjects[2].fields.title}
-                fill
-                className="object-cover object-top-left"
-              />
-            </div>
-            <p className="caption absolute bottom-4 left-[50%] transform -translate-x-[50%] text-black text-lg text-center font-bold">
-              {page.fields.featuredProjects[2].fields.title}
-            </p>
-          </div>
-        </div> */}
       </div>
 
       {/* About section */}

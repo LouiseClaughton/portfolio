@@ -5,7 +5,7 @@ export default function Card({ block, isEven }) {
 
   return (
     <div
-      className={`flex flex-col ${fields.title ? 'py-24' : ''} gap-2 
+      className={`flex flex-col gap-2 
             ${fields?.textAlignment === "Center" ? "text-center items-center" : "text-left"} 
             ${fields?.border ? "border-b-2 border-[#E6E0DA] mx-12 md:mx-24" : ""}
         `}
