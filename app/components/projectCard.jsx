@@ -13,7 +13,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
         <Link className="h-full w-full block" href={href ? href : ''}>
             <div className="h-full w-full flex flex-col min-h-[20rem]">
                 {image ? (
-                    <div className="w-full h-80 mb-4 relative bg-gray-800 overflow-hidden hover:-translate-y-2 transition-all">
+                    <div className="w-full h-80 mb-4 relative overflow-hidden">
                         
                         {/* Skeleton */}
                         {!loaded && (

@@ -18,19 +18,13 @@ export default async function HomePage() {
   return (
     <main className="bg-[#F9F8F4]">
       {/* Hero section */}
-      <div className="lg:h-screen w-full flex flex-col lg:flex-row items-center relative bg-[#1E1E1E] text-white overflow-hidden px-24 pb-24 py-32">
+      <div className="w-full flex flex-col lg:flex-row items-center relative bg-[#1E1E1E] text-white overflow-hidden px-24 py-56">
         {/* Left side - title and scroll indicator */}
         <div>
           {/* Main title, split into spans for the hover effect */}
           <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[70px] md:leading-[80px] hover:cursor-pointer text-center lg:text-left">
             <div>
-              <span>Designer</span>,
-            </div>
-            <div>
-              <span>Developer</span>,
-            </div>
-            <div>
-              <span className="text-[#FF71D0]">Storyteller</span>.
+              <span>Designer</span>, <span>Developer</span>, <span className="text-[#FF71D0]">Storyteller</span>.
             </div>
           </h1>
           <a
@@ -64,7 +58,7 @@ export default async function HomePage() {
         </div>
 
         {/* Right side - featured projects in polaroid style */}
-        <div className="w-full h-full flex flex-col lg:flex-row items-center justify-end my-15">
+        {/* <div className="w-full h-full flex flex-col lg:flex-row items-center justify-end my-15">
           <div className="w-[15rem] h-[17rem] bg-white relative -rotate-10 hover:-translate-y-2 transition-transform">
             <div className="absolute top-4 left-4 w-[90%] h-[75%] bg-black">
               <Image
@@ -104,16 +98,16 @@ export default async function HomePage() {
               {page.fields.featuredProjects[2].fields.title}
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* About section */}
       <div id="about" className="bg-[#F9F8F4] relative">
         {page.fields.about && (
-          <div className="px-12 lg:px-24 py-24 md:py-32 lg:py-42">
+          <div className="px-12 lg:px-24 py-24">
             <h2 className="font-bold text-3xl md:text-4xl leading-[40px] md:leading-[60px]">
               Hello, I’m Louise, a{" "}
-              <span className="text-[#8BD2FF]">web designer and developer</span>{" "}
+              <span className="text-[#60c1ff]">web designer and developer</span>{" "}
               passionate about the{" "}
               <span className="text-[#FF71D0]">weird and wonderful</span>.
             </h2>
@@ -124,7 +118,7 @@ export default async function HomePage() {
 
       <div id="projects" className="bg-[#1E1E1E] relative">
         {page.fields.featuredProjects && (
-          <div className="px-12 lg:px-24 py-24 md:py-32 lg:py-42 flex flex-col gap-12">
+          <div className="px-12 lg:px-24 flex flex-col gap-12">
             <div className="text-white">
               <FeaturedProjectsSlider projects={page.fields.featuredProjects} />
             </div>
@@ -152,14 +146,14 @@ export default async function HomePage() {
 
       <div id="testimonials" className="bg-[#F9F8F4]">
         {page.fields.featuredQuotes && (
-          <div className="px-12 lg:px-24 py-24 md:py-32 lg:py-42">
+          <div className="px-12 lg:px-24 py-24">
             <FeaturedQuotes quotes={page.fields.featuredQuotes} />
           </div>
         )}
       </div>
 
       <div id="skills-slider" className="bg-[#2D2D2D]">
-        <div className="px-12 lg:px-24 py-24 md:py-32 lg:py-42 flex flex-col gap-6 text-white">
+        <div className="px-12 lg:px-24 py-24 flex flex-col gap-6 text-white">
           <h2 className="text-3xl md:text-4xl mb-6">Tools of the trade</h2>
           <div className="border-b border-[#555] w-full pb-6">
             <span className="caption text-2xl">Obsessed with</span>
@@ -188,7 +182,7 @@ export default async function HomePage() {
             </div>
           </div>
           <div>
-            <span className="caption text-2xl">Learning</span>
+            <span className="caption text-2xl">Learning & experimenting with</span>
             <div className="flex gap-2 mt-2 flex-wrap">
               {page.fields.lowSkills.map((skill) => (
                 <span
@@ -205,7 +199,7 @@ export default async function HomePage() {
 
       <div id="client-slider" className="bg-[#F9F8F4] relative">
         {page.fields.clients && (
-          <div className="px-12 lg:px-24 py-24 md:py-32 lg:py-42 flex flex-col gap-12">
+          <div className="px-12 lg:px-24 py-24 md:py-32 flex flex-col gap-12">
             <h2 className="text-center text-3xl">Trusted by experts</h2>
             <Slider content={page.fields.clients} />
             <div

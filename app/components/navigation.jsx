@@ -10,7 +10,7 @@ export default function Navigation () {
 
     return (
         <>
-            <div className="fixed inset-0 h-20 z-99 bg-transparent w-full px-24 py-12">
+            <div className="fixed inset-0 h-20 z-101 bg-transparent w-full px-24 py-12">
 
                 {/* Menu button */}
                 <div className="flex justify-center items-center lg:justify-start lg:items-start">
@@ -30,7 +30,7 @@ export default function Navigation () {
 
             {/* Menu items - hidden originally */}
             <div
-                className={`fixed inset-0 flex items-center justify-center lg:justify-start w-full h-screen bg-[#F9F8F4] z-98 px-12 lg:px-24 py-24 md:py-32 lg:py-42 transition-all duration-500 -translate-y-full
+                className={`fixed inset-0 flex items-center justify-center lg:justify-start w-full h-screen bg-[#F9F8F4] z-100 px-12 lg:px-24 py-24 md:py-32 lg:py-42 transition-all duration-500 -translate-y-full
                 ${open 
                     ? 'translate-y-0 pointer-events-auto' 
                     : '-translate-y-full pointer-events-none'
@@ -38,11 +38,11 @@ export default function Navigation () {
             >
                 {/* Main links - style matches homepage title */}
                 <nav className="flex flex-col font-bold text-5xl md:text-6xl tracking-[-2px] leading-[60px] md:leading-[80px] nav-link text-center lg:text-left">
-                    <li className="list-none"><Link href="/" onClick={() => setOpen(false)} className="hover:text-[#67865D] transition-colors">Home</Link><span className="pl-2">,</span></li>
-                    <li className="list-none"><Link href="/about" onClick={() => setOpen(false)} className="hover:text-[#744F89] transition-colors">About</Link><span className="pl-2">,</span></li>
-                    <li className="list-none"><Link href="/projects" onClick={() => setOpen(false)} className="hover:text-[#67865D] transition-colors">Projects</Link><span className="pl-2">,</span></li>
-                    <li className="list-none"><Link href="/interests" onClick={() => setOpen(false)} className="hover:text-[#744F89] transition-colors">Interests</Link><span className="pl-2">,</span></li>
-                    <li className="list-none"><Link href="/contact" onClick={() => setOpen(false)} className="hover:text-[#67865D] transition-colors">Contact</Link><span className="pl-2">.</span></li>
+                    <li className="list-none"><Link href="/" onClick={() => setOpen(false)} className="hover:text-[#FF71D0] transition-colors">Home</Link><span className="pl-2">,</span></li>
+                    <li className="list-none"><Link href="/about" onClick={() => setOpen(false)} className="hover:text-[#60c1ff] transition-colors">About</Link><span className="pl-2">,</span></li>
+                    <li className="list-none"><Link href="/projects" onClick={() => setOpen(false)} className="hover:text-[#FF71D0] transition-colors">Projects</Link><span className="pl-2">,</span></li>
+                    <li className="list-none"><Link href="/interests" onClick={() => setOpen(false)} className="hover:text-[#60c1ff] transition-colors">Interests</Link><span className="pl-2">,</span></li>
+                    <li className="list-none"><Link href="/contact" onClick={() => setOpen(false)} className="hover:text-[#FF71D0] transition-colors">Contact</Link><span className="pl-2">.</span></li>
                 </nav>
             </div>
         </>
