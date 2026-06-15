@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import RenderBlock from "@/lib/renderBlock";
 import ArrowDown from "../assets/arrowDown";
 import Projects from "../components/projects";
+import ContactCTA from "../components/contact-cta";
 
 export default async function DynamicPage({ params }) {
     const { slug } = await params;
@@ -99,31 +100,11 @@ export default async function DynamicPage({ params }) {
                 {page?.fields?.isProjectsPage && (
                     <div className="bg-[#F9F8F4] text-black">
                         <Projects projects={page?.fields?.featuredProjects} />
-                        <div id="contact-cta" className="bg-[#2D2D2D] relative">
-                            <div className="px-24 py-42 flex flex-col items-center gap-12">
-                                <h2 className="text-center text-4xl text-white">Ready to get started?</h2>
-                                <a href="/contact">
-                                <button 
-                                    className="z-50 rounded-3xl py-2 px-4 border-2 border-[#2D2D2D] bg-[#F9F8F4] hover:bg-[#67865D] hover:text-white hover:cursor-pointer transition-colors"
-                                >
-                                    CONTACT
-                                </button>
-                                </a>
-                            </div>
-                            <div
-                                className="
-                                    pointer-events-none
-                                    absolute top-0 left-0
-                                    h-6 w-full
-                                    bg-[url('/waves/short-wave.svg')]
-                                    bg-repeat-x
-                                    bg-bottom
-                                "
-                            />
-                        </div>
                     </div>
                 )}
             </div>
+
+            <ContactCTA />
         </main>
     );
 }

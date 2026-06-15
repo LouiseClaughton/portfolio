@@ -4,6 +4,7 @@ import Link from "next/link";
 import RenderBlock from "@/lib/renderBlock";
 import ArrowUpRight from "@/app/assets/arrowUpRight";
 import Image from "next/image";
+import ContactCTA from "@/app/components/contact-cta";
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
@@ -153,28 +154,7 @@ export default async function ProjectPage({ params }) {
           );
         })}
 
-        <div id="contact-cta" className="bg-[#1E1E1E] relative">
-            <div className="px-24 py-42 flex flex-col items-center gap-12">
-                <h2 className="text-center text-4xl text-white">Ready to get started?</h2>
-                <a href="/contact">
-                <button 
-                    className="z-50 rounded-3xl py-2 px-4 border-2 border-[#1E1E1E] bg-[#F9F8F4] hover:bg-[#67865D] hover:text-white hover:cursor-pointer transition-colors"
-                >
-                    CONTACT
-                </button>
-                </a>
-            </div>
-            <div
-                className="
-                    pointer-events-none
-                    absolute top-0 left-0
-                    h-6 w-full
-                    bg-[url('/waves/short-wave.svg')]
-                    bg-repeat-x
-                    bg-bottom
-                "
-            />
-        </div>
+        <ContactCTA />
       </div>
     </main>
   );
