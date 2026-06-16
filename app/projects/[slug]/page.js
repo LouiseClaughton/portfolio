@@ -29,7 +29,7 @@ export default async function ProjectPage({ params }) {
     <main className="bg-[#F9F8F4]">
 
       {/* Hero */}
-      <div className="w-screen grid grid-cols-2 relative bg-[#1E1E1E] text-white py-48">
+      <div className="w-screen relative bg-[#1E1E1E] text-white py-48">
         <div className="flex flex-col justify-center pl-24">
           <Link href={fields.projectLink || "#"}>
             <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[80px] md:leading-[110px] hover:cursor-pointer">
@@ -112,23 +112,13 @@ export default async function ProjectPage({ params }) {
           return (
             <div key={block.sys.id} className="relative">
                 {/* Section */}
-                <div className={`${isEven ? "bg-[#F9F8F4] text-black" : "bg-[#1E1E1E] text-white"}`}>
+                <div className={`${isEven ? "bg-[#1E1E1E] text-white" : "bg-[#F9F8F4] text-black"}`}>
                     <RenderBlock block={block} isEven={isEven} />
                 </div>
 
                 {index < fields.content.length - 1 && (
                   <div className="w-full">
                       {isEven ?
-                        <div
-                            className="
-                                pointer-events-none
-                                absolute bottom-0 left-0
-                                h-6 w-full
-                                bg-[url('/waves/short-wave.svg')]
-                                bg-repeat-x
-                                bg-bottom
-                            "
-                        /> :
                         <svg
                             viewBox="0 0 100 24"
                             preserveAspectRatio="none"
@@ -146,7 +136,17 @@ export default async function ProjectPage({ params }) {
                                 Z
                                 "
                             />
-                        </svg>
+                        </svg> :
+                        <div
+                            className="
+                                pointer-events-none
+                                absolute bottom-0 left-0
+                                h-6 w-full
+                                bg-[url('/waves/short-wave.svg')]
+                                bg-repeat-x
+                                bg-bottom
+                            "
+                        />
                       }
                   </div>
                 )}
