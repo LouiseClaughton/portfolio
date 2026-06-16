@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }) {
                 {fields.keyQuote}
               </h2>
 
-              <div>{fields.summary}</div>
+              <div className="whitespace-pre-line">{fields.summary}</div>
             </div>
 
             <div className="flex flex-col gap-4">
