@@ -5,6 +5,7 @@ import RenderBlock from "@/lib/renderBlock";
 import ArrowUpRight from "@/app/assets/arrowUpRight";
 import Image from "next/image";
 import ContactCTA from "@/app/components/contact-cta";
+import Testimonial from "@/app/components/testimonial";
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
@@ -103,6 +104,9 @@ export default async function ProjectPage({ params }) {
                 </div>
               }
             </div>
+            {fields?.testimonial &&
+              <Testimonial quote={fields.testimonial} />
+            }
           </div>
         </div>
 
