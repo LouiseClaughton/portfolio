@@ -26,6 +26,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
                             alt={title}
                             fill
                             onLoad={() => setLoaded(true)}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className={`object-cover transition-opacity duration-500 object-top rounded-xl ${
                                 loaded ? "opacity-100" : "opacity-0"
                             }`}

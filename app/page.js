@@ -23,7 +23,7 @@ export default async function HomePage() {
         {/* Left side - title and scroll indicator */}
         <div>
           {/* Main title, split into spans for the hover effect */}
-          <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[70px] md:leading-[80px] hover:cursor-pointer text-center lg:text-left">
+          <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[70px] md:leading-[80px] text-center lg:text-left">
             <div>
               <span>Designer</span>, <span>Developer</span>, <span className="text-[#FF71D0]">Storyteller</span>.
             </div>

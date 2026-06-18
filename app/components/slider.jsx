@@ -57,6 +57,7 @@ export default function Slider({ content }) {
                                     alt={logo.fields.title}
                                     width={120}
                                     height={60}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     className="object-cover"
                                 />
                             </div>
@@ -79,6 +80,7 @@ export default function Slider({ content }) {
                                     alt={logo.fields.title}
                                     width={120}
                                     height={60}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     className="object-cover rounded-xl"
                                 />
                             </div>

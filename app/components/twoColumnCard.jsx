@@ -20,6 +20,7 @@ export default function TwoColumnCard({ block, id }) {
                         alt={fields?.title || ""}
                         fill
                         onLoad={() => setLoaded(true)}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className={`object-cover object-top-left transition-opacity duration-500 ${
                         loaded ? "opacity-100" : "opacity-0"
                         }`}
