@@ -1,9 +1,10 @@
 import ArrowDown from "./assets/arrowDown";
 import Card from "./components/card";
-import FeaturedProjectsSlider from "./components/featuredProjectsSlider";
+import FeaturedProjectsGrid from "./components/featuredProjectsGrid";
 import FeaturedQuotes from "./components/featuredQuotes";
 import Slider from "./components/slider";
 import Image from "next/image";
+import ProjectCard from "./components/projectCard";
 
 import { client } from "@/lib/contentful";
 import ContactCTA from "./components/contact-cta";
@@ -77,8 +78,18 @@ export default async function HomePage() {
       <div id="projects" className="bg-[#1E1E1E] relative">
         {page.fields.featuredProjects && (
           <div className="px-12 lg:px-24 flex flex-col gap-12">
-            <div className="text-white">
-              <FeaturedProjectsSlider projects={page.fields.featuredProjects} />
+            <div className="text-white pt-24 pb-40">
+              <div className="flex justify-between flex-col items-center gap-6 lg:flex-row mb-12">
+                  <h2 className="text-3xl md:text-4xl text-white">
+                      Things I've <span className="text-[#FF71D0]">made</span>
+                  </h2>
+                  <a href="/projects">
+                    <button className="caption text-lg z-50 rounded-3xl py-2 px-4 border-2 border-white hover:bg-white text-white hover:text-black hover:cursor-pointer transition-colors">
+                        View more
+                    </button>
+                  </a>
+              </div>
+              <FeaturedProjectsGrid projects={page.fields.featuredProjects} />
             </div>
             <svg
               viewBox="0 0 100 24"
