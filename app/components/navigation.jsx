@@ -23,7 +23,7 @@ export default function Navigation () {
                         `}
                         onClick={() => setOpen(!open)}
                     >
-                        MENU
+                        EXPLORE
                     </button>
                 </div>
             </div>

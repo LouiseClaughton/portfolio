@@ -24,7 +24,10 @@ export default function FeaturedProjectsGrid({ projects }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
       {projects.map((project, index) => (
-        <div className={index % 2 === 1 ? "md:mt-16" : ""}>
+        <div 
+          key={project.id}
+          className={index % 2 === 1 ? "md:mt-16" : ""}
+        >
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
