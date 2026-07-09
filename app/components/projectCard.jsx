@@ -21,23 +21,27 @@ export default function ProjectCard({ title, href, image, role, date }) {
                         )}
 
                         {/* Image */}
-                        <Image
-                            src={image}
-                            alt={title}
-                            fill
-                            onLoad={() => setLoaded(true)}
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className={`object-cover transition-opacity duration-500 object-top rounded-xl ${
-                                loaded ? "opacity-100" : "opacity-0"
-                            }`}
-                        />
+                        {image &&
+                            <Image
+                                src={image}
+                                alt={title}
+                                fill
+                                onLoad={() => setLoaded(true)}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className={`object-cover transition-opacity duration-500 object-top rounded-xl ${
+                                    loaded ? "opacity-100" : "opacity-0"
+                                }`}
+                            />
+                        }
                     </div>
                 ) : (
                     <div className="w-full h-40 mb-4 bg-gray-400"></div>
                 )}
                 <div>
                     <h2 className="font-bold text-xl">{title}</h2>
-                    <span>{role} / {year}</span>
+                    {role && year && 
+                        <span className="caption text-lg">{role} / {year}</span>
+                    }
                 </div>
             </div>
         </Link>

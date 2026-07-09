@@ -24,11 +24,12 @@ export default async function HomePage() {
         {/* Left side - title and scroll indicator */}
         <div>
           {/* Main title, split into spans for the hover effect */}
-          <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[70px] md:leading-[80px] text-center lg:text-left">
+          <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[70px] md:leading-[80px] text-center lg:text-left mb-8">
             <div>
-              <span>Designer</span>, <span>Developer</span>, <span className="text-[#FF71D0]">Storyteller</span>.
+              <span>Designer, Developer, Storyteller</span>.
             </div>
           </h1>
+          <p className="caption text-2xl">{page.fields.subtitle}</p>
           <a
             href="#projects"
             className="absolute bottom-15 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:bottom-20 flex items-center justify-center p-3 group hover:cursor-pointer z-99"
@@ -85,7 +86,7 @@ export default async function HomePage() {
                   </h2>
                   <a href="/projects">
                     <button className="caption text-lg z-50 rounded-3xl py-2 px-4 border-2 border-white hover:bg-white text-white hover:text-black hover:cursor-pointer transition-colors">
-                        View more
+                        more
                     </button>
                   </a>
               </div>

@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import ProjectCard from "./projectCard";
 import { fadeInView } from "@/lib/scrollFade";
+import BlogCard from "./blogCard";
 
-function ProjectItem({ project, index, grid }) {
+function BlogItem({ post, index, grid }) {
     const [ref, isVisible] = fadeInView({
         threshold: 0.15,
     });
@@ -21,29 +21,25 @@ function ProjectItem({ project, index, grid }) {
                 }
             `}
         >
-            <ProjectCard
-                title={project.fields.title}
-                slug={project.fields.slug}
-                date={project.fields.date}
-                image={
-                    project.fields.heroImage?.fields?.file?.url
-                    ? `https:${project.fields.heroImage.fields.file.url}`
-                    : ''
-                }
-                role={project.fields.role}
-                href={`/projects/${project.fields.slug}`}
+            <BlogCard
+                title={post.fields.title}
+                slug={post.fields.slug}
+                date={post.fields.date}
+                href={`/blog/${post.fields.slug}`}
+                excerpt={post.fields.excerpt}
+                tag={post.fields.tag}
             />
         </div>
     );
 }
 
-export default function Projects({ grid = true, projects = [] }) {
+export default function Blog({ grid = true, posts = [] }) {
     return (
         <div className={`py-12 ${grid ? 'flex flex-col md:grid md:grid-cols-2 gap-14 md:gap-28 px-12 md:px-24 pb-56' : 'flex flex-col gap-12 md:gap-20'}`}>
-            {projects.map((project, index) => (
-                <ProjectItem
-                    key={project.sys.id}
-                    project={project}
+            {posts.map((post, index) => (
+                <BlogItem
+                    key={post.sys.id}
+                    post={post}
                     index={index}
                     grid={grid}
                 />

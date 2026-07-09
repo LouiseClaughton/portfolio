@@ -15,7 +15,7 @@ export default function Navigation () {
                 {/* Menu button */}
                 <div className="flex justify-center items-center lg:justify-start lg:items-start">
                     <button 
-                        className={`z-50 rounded-3xl py-2 px-4 transition-colors hover:cursor-pointer border-2 border-[#2D2D2D]
+                        className={`caption text-xl z-50 rounded-3xl py-2 px-4 transition-colors hover:cursor-pointer border-2 border-[#2D2D2D]
                             ${open ? 
                                 "bg-[#2D2D2D] text-white" : "bg-[#F9F8F4]"
                             }
@@ -23,7 +23,7 @@ export default function Navigation () {
                         `}
                         onClick={() => setOpen(!open)}
                     >
-                        EXPLORE
+                        explore
                     </button>
                 </div>
             </div>
@@ -41,7 +41,7 @@ export default function Navigation () {
                     <li className="list-none"><Link href="/" onClick={() => setOpen(false)} className="hover:text-[#FF71D0] transition-colors">Home</Link><span className="pl-2">,</span></li>
                     <li className="list-none"><Link href="/about" onClick={() => setOpen(false)} className="hover:text-[#60c1ff] transition-colors">About</Link><span className="pl-2">,</span></li>
                     <li className="list-none"><Link href="/projects" onClick={() => setOpen(false)} className="hover:text-[#FF71D0] transition-colors">Projects</Link><span className="pl-2">,</span></li>
-                    <li className="list-none"><Link href="/interests" onClick={() => setOpen(false)} className="hover:text-[#60c1ff] transition-colors">Interests</Link><span className="pl-2">,</span></li>
+                    <li className="list-none"><Link href="/blog" onClick={() => setOpen(false)} className="hover:text-[#60c1ff] transition-colors">Blog</Link><span className="pl-2">,</span></li>
                     <li className="list-none"><Link href="/contact" onClick={() => setOpen(false)} className="hover:text-[#FF71D0] transition-colors">Contact</Link><span className="pl-2">.</span></li>
                 </nav>
             </div>

@@ -46,7 +46,7 @@ export default function FeaturedQuotes({ quotes }) {
                                         <div className="font-semibold">
                                             {quote.fields.author}
                                         </div>
-                                        <div className="text-semibold">
+                                        <div className="text-semibold caption text-lg">
                                             {quote.fields.authorJob}
                                         </div>
                                     </div>
