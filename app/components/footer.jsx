@@ -17,9 +17,10 @@ export default function Footer() {
             </a>
             <nav>
                 <ul className="list-none flex gap-8">
+                    <li className="list-none"><Link href="/" className="hover:text-[#0092FF] transition-colors">Home</Link></li>
                     <li className="list-none"><Link href="/about" className="hover:text-[#0092FF] transition-colors">About</Link></li>
                     <li className="list-none"><Link href="/projects" className="hover:text-[#0092FF] transition-colors">Projects</Link></li>
-                    <li className="list-none"><Link href="/interests" className="hover:text-[#0092FF] transition-colors">Interests</Link></li>
+                    <li className="list-none"><Link href="/blog" className="hover:text-[#0092FF] transition-colors">Blog</Link></li>
                     <li className="list-none"><Link href="/contact" className="hover:text-[#0092FF] transition-colors">Contact</Link></li>
                 </ul>
             </nav>

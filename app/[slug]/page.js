@@ -2,6 +2,7 @@ import { client } from "@/lib/contentful";
 import { notFound } from "next/navigation";
 import RenderBlock from "@/lib/renderBlock";
 import ArrowDown from "../assets/arrowDown";
+import Blog from "../components/blog";
 import Projects from "../components/projects";
 import ContactCTA from "../components/contact-cta";
 
@@ -22,7 +23,10 @@ export default async function DynamicPage({ params }) {
         <main>
             <div className="w-screen flex items-center relative bg-[#1E1E1E] text-white px-12 lg:px-24 py-24 md:py-32 lg:py-42">
                 {/* Main title */}
-                <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[80px] md:leading-[110px] hover:cursor-pointer">{page?.fields?.title}</h1>
+                <div>
+                    <h1 className="font-bold text-5xl md:text-6xl leading-[80px] md:leading-[110px] hover:cursor-pointer">{page?.fields?.title}</h1>
+                    <p className="caption text-xl">{page?.fields?.subtitle}</p>
+                </div>
                 {page?.fields?.relativeLink &&
                     <a href={`#${page?.fields?.relativeLink}`} className="absolute bottom-4 border border-black rounded-full p-2 hover:cursor-pointer">
                         <ArrowDown />
@@ -100,6 +104,12 @@ export default async function DynamicPage({ params }) {
                 {page?.fields?.isProjectsPage && (
                     <div className="bg-[#F9F8F4] text-black">
                         <Projects projects={page?.fields?.featuredProjects} />
+                    </div>
+                )}
+
+                {page?.fields?.isPostsPage && (
+                    <div className="bg-[#F9F8F4] text-black">
+                        <Blog posts={page?.fields?.featuredProjects} />
                     </div>
                 )}
             </div>

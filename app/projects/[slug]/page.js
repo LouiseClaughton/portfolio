@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }) {
               {fields.title}
             </h1>
           </Link>
-          <span>
+          <span className="caption text-xl">
             {fields.role} / {year}
           </span>
         </div>
@@ -77,7 +77,7 @@ export default async function ProjectPage({ params }) {
             <div className="flex flex-col gap-4">
               {fields?.software &&
                 <div className="flex flex-col gap-2">
-                  <span className="font-bold">Systems</span>
+                  <span className="font-bold caption text-xl">Systems</span>
                   <div className="flex gap-2 flex-wrap justify-center md:justify-start">
                     {fields?.software?.map((item) => (
                       <div
@@ -92,7 +92,7 @@ export default async function ProjectPage({ params }) {
               }
               {fields?.projectLink &&
                 <div className="flex flex-col gap-2">
-                  <span className="font-bold">Links</span>
+                  <span className="font-bold caption text-xl">Link</span>
                   <div className="flex justify-center md:justify-start">
                     {fields?.projectLink &&
                       <a href={fields.projectLink} target="_blank" className="rounded-full bg-[#FF71D0] text-white w-fit h-fit py-2 px-4 flex items-center gap-4">
