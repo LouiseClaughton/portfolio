@@ -30,7 +30,7 @@ export default function FeaturedQuotes({ quotes }) {
 
                     return (
                         <SwiperSlide key={quote.sys.id}>
-                            <div className="py-12 px-8 text-center relative">
+                            <div className="py-12 lg:px-8 text-center relative">
                                 <div className="speech-bubble bg-white border-2 border-[#2D2D2D] rounded-lg relative p-6 lg:px-14 lg:py-12 max-w-full text-left shadow-[4px_4px_0_#2d2d2d]">
                                     <div className="text-lg font-bold text-black leading-tight">
                                         "{quote.fields.content}"

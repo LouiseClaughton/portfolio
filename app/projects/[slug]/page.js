@@ -30,8 +30,8 @@ export default async function ProjectPage({ params }) {
     <main className="bg-[#F9F8F4]">
 
       {/* Hero */}
-      <div className="w-screen relative bg-[#1E1E1E] text-white py-48">
-        <div className="flex flex-col justify-center pl-24">
+      <div className="w-screen relative bg-[#1E1E1E] text-white py-48 text-center lg:text-left">
+        <div className="flex flex-col justify-center px-12 lg:pl-24">
           <Link href={fields.projectLink || "#"}>
             <h1 className="flex flex-col font-bold text-5xl md:text-6xl leading-[80px] md:leading-[110px] hover:cursor-pointer">
               {fields.title}

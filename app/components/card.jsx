@@ -15,18 +15,18 @@ export default function Card({ block, isEven }) {
 
   return (
     <div
-      className={`flex flex-col gap-2 
+      className={`flex flex-col py-12 items-center lg:items-start
             ${fields?.hidePadding ? "" : "px-12 md:px-24 py-12 md:py-24"}
             ${fields?.textAlignment === "Center" ? "text-center items-center" : "text-left"} 
             ${fields?.border ? "border-b-2 border-[#E6E0DA] mx-12 md:mx-24" : ""}
         `}
     >
-      <h2 className="font-bold text-3xl leading-[40px] md:leading-[60px] mb-8">
+      <h2 className="font-bold text-3xl leading-[40px] md:leading-[60px] mb-8 text-center lg:text-left">
         {fields.headingText}
           <span className={`text-[${textColour}]`}> {fields.headingSpanText}</span>
       </h2>
       {fields.content && (
-        <div className="whitespace-pre-line mb-6">
+        <div className="whitespace-pre-line mb-6 text-center lg:text-left">
           {fields.content}
         </div>
       )}

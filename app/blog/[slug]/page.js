@@ -27,7 +27,7 @@ export default async function BlogPostPage({ params }) {
     <main className="bg-[#F9F8F4]">
 
       {/* Hero */}
-      <div className="w-screen relative bg-[#1E1E1E] text-white py-48">
+      <div className="w-screen relative bg-[#1E1E1E] text-white py-48 text-center lg:text-left">
         <div className="flex flex-col justify-center px-24">
           <span className="caption text-xl">
             {fields.tag}
@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }) {
           return (
             <div key={block.sys.id} className="relative">
                 {/* Section */}
-                <div className="bg-[#F9F8F4] text-black py-8">
+                <div className="bg-[#F9F8F4] text-black">
                     <RenderBlock block={block} />
                 </div>
             </div>

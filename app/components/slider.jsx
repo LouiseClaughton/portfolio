@@ -23,7 +23,7 @@ export default function Slider({ content }) {
 
     const swiperSettings = {
         modules: [Autoplay],
-        slidesPerView: numberToShow,
+        slidesPerView: 2,
         spaceBetween: 24,
         loop: true,
         autoplay: {

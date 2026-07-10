@@ -29,7 +29,7 @@ export default async function HomePage() {
               <span>Designer, Developer, Storyteller</span>.
             </div>
           </h1>
-          <p className="caption text-2xl">{page.fields.subtitle}</p>
+          <p className="caption text-2xl text-center lg:text-left">{page.fields.subtitle}</p>
           <a
             href="#projects"
             className="absolute bottom-15 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:bottom-20 flex items-center justify-center p-3 group hover:cursor-pointer z-99"
@@ -65,7 +65,7 @@ export default async function HomePage() {
       <div id="about" className="bg-[#F9F8F4] relative">
         {page.fields.about && (
           <div className="px-12 lg:px-24 py-24">
-            <h2 className="font-bold text-3xl md:text-4xl leading-[40px] md:leading-[60px]">
+            <h2 className="font-bold text-3xl md:text-4xl leading-[40px] md:leading-[60px] text-center lg:text-left">
               Hello, I’m Louise, a{" "}
               <span className="text-[#60c1ff]">web designer and developer</span>{" "}
               passionate about the{" "}

@@ -21,7 +21,7 @@ export default async function DynamicPage({ params }) {
 
     return (
         <main>
-            <div className="w-screen flex items-center relative bg-[#1E1E1E] text-white px-12 lg:px-24 py-24 md:py-32 lg:py-42">
+            <div className="w-screen flex items-center justify-center lg:justify-start relative bg-[#1E1E1E] text-white px-12 lg:px-24 py-32 lg:py-42 text-center lg:text-left">
                 {/* Main title */}
                 <div>
                     <h1 className="font-bold text-5xl md:text-6xl leading-[80px] md:leading-[110px] hover:cursor-pointer">{page?.fields?.title}</h1>
@@ -59,7 +59,7 @@ export default async function DynamicPage({ params }) {
                     return (
                     <div key={block.sys.id} className="relative">
                         {/* Section */}
-                        <div className={`${isEven ? "bg-[#F9F8F4] text-black" : "bg-[#1E1E1E] text-white"} px-12 lg:p-24`}>
+                        <div className={`${isEven ? "bg-[#F9F8F4] text-black" : "bg-[#1E1E1E] text-white"} p-12 lg:p-24`}>
                             <RenderBlock block={block} isEven={isEven} />
                         </div>
 
