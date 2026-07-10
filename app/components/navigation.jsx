@@ -15,9 +15,9 @@ export default function Navigation () {
                 {/* Menu button */}
                 <div className="flex justify-center items-center lg:justify-start lg:items-start">
                     <button 
-                        className={`caption text-xl z-50 rounded-3xl py-2 px-4 transition-colors hover:cursor-pointer border-2 border-[#2D2D2D]
+                        className={`caption text-xl z-50 rounded-3xl py-2 px-4 transition-colors hover:cursor-pointer border-2 border-[#1E1E1E]
                             ${open ? 
-                                "bg-[#2D2D2D] text-white" : "bg-[#F9F8F4]"
+                                "bg-[#1E1E1E] text-white" : "bg-[#F9F8F4]"
                             }
                             transition-colors
                         `}

@@ -122,7 +122,7 @@ export default async function HomePage() {
         )}
       </div>
 
-      <div id="skills-slider" className="bg-[#2D2D2D]">
+      <div id="skills-slider" className="bg-[#1E1E1E]">
         <div className="px-12 lg:px-24 py-24 flex flex-col gap-6 text-white">
           <h2 className="text-3xl md:text-4xl mb-6">Tools of the trade</h2>
           <div className="border-b border-[#555] w-full pb-6">

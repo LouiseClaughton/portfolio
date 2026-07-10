@@ -9,7 +9,7 @@ export default function Button({
     <a
       href={buttonLink}
       className={`rounded-full px-6 py-2 w-fit transition-colors uppercase
-        ${isEven ? "bg-[#2D2D2D] text-white" : "bg-[#F9F8F4] text-black"}`}
+        ${isEven ? "bg-[#1E1E1E] text-white" : "bg-[#F9F8F4] text-black"}`}
     >
       {buttonText}
     </a>
