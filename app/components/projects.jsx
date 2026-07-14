@@ -25,11 +25,7 @@ function ProjectItem({ project, index, grid }) {
                 title={project.fields.title}
                 slug={project.fields.slug}
                 date={project.fields.date}
-                image={
-                    project.fields.heroImage?.fields?.file?.url
-                    ? `https:${project.fields.heroImage.fields.file.url}`
-                    : ''
-                }
+                image={project.fields.heroImage}
                 role={project.fields.role}
                 href={`/projects/${project.fields.slug}`}
             />

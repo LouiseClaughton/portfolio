@@ -5,8 +5,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function ProjectCard({ title, href, image, role, date }) {
-    const [loaded, setLoaded] = useState(false);
-
     const year = new Date(date).getFullYear();
 
     return (
@@ -14,23 +12,15 @@ export default function ProjectCard({ title, href, image, role, date }) {
             <div className="h-full w-full flex flex-col min-h-[20rem]">
                 {image ? (
                     <div className="w-full h-80 mb-4 relative overflow-hidden">
-                        
-                        {/* Skeleton */}
-                        {!loaded && (
-                            <div className="absolute inset-0 animate-pulse bg-gray-700" />
-                        )}
 
                         {/* Image */}
                         {image &&
                             <Image
-                                src={image}
+                                src={`https:${image.fields.file.url}`}
                                 alt={title}
-                                fill
-                                onLoad={() => setLoaded(true)}
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                className={`object-cover transition-opacity duration-500 object-top rounded-xl ${
-                                    loaded ? "opacity-100" : "opacity-0"
-                                }`}
+                                width={image.fields.file.details.image.width}
+                                height={image.fields.file.details.image.height}
+                                className="w-full rounded-2xl object-cover hover:cursor-pointer"
                             />
                         }
                     </div>

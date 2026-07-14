@@ -80,7 +80,7 @@ export default function Card({ block, isEven }) {
 
       {expandedImage && (
         <div
-          className="fixed inset-0 z-[101] bg-black/80 flex items-center justify-center py-12 px-8 lg:px-20"
+          className="fixed inset-0 z-[102] bg-black/80 flex items-center justify-center py-12 px-8 lg:px-20"
           onClick={() => setExpandedImage(null)}
         >
           <Image
