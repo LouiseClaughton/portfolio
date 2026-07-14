@@ -10,7 +10,7 @@ export default function Navigation () {
 
     return (
         <>
-            <div className="fixed inset-0 h-20 z-101 bg-transparent w-full px-24 py-12">
+            <div className="fixed inset-0 h-20 z-[100] bg-transparent w-full px-24 py-12">
 
                 {/* Menu button */}
                 <div className="flex justify-center items-center lg:justify-start lg:items-start">

@@ -10,24 +10,32 @@ export default function TwoColumnCard({ block, id }) {
     const fields = block?.fields;
 
     const ImageContent = (
-        <div>
-            {fields?.contentType === "Featured Projects" ? (
-                <Projects grid={false} projects={fields?.featuredProjects} />
-            ) : (
-                <div className="relative w-full h-[400px] md:h-[700px] overflow-hidden rounded-2xl">
-                    <Image
-                        src={`https:${fields?.image?.fields?.file?.url}`}
-                        alt={fields?.title || ""}
-                        fill
-                        onLoad={() => setLoaded(true)}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className={`object-cover object-top-left transition-opacity duration-500 ${
-                        loaded ? "opacity-100" : "opacity-0"
-                        }`}
-                    />
-                </div>
-            )}
-        </div>
+        fields?.contentType === "Featured Projects" ? (
+            <Projects grid={false} projects={fields?.featuredProjects} />
+        ) : (
+            <div className="relative w-full overflow-hidden grid grid-cols-2 gap-8">
+                <Image
+                    src={`https:${fields?.image?.fields?.file?.url}`}
+                    alt={fields?.title || ""}
+                    fill
+                    onLoad={() => setLoaded(true)}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className={`object-contain object-top-left transition-opacity duration-500 !h-fit !static rounded-2xl ${
+                    loaded ? "opacity-100" : "opacity-0"
+                    }`}
+                />
+                <Image
+                    src={`https:${fields?.image?.fields?.file?.url}`}
+                    alt={fields?.title || ""}
+                    fill
+                    onLoad={() => setLoaded(true)}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className={`object-contain object-top-left transition-opacity duration-500 !h-fit !static rounded-2xl ${
+                    loaded ? "opacity-100" : "opacity-0"
+                    }`}
+                />
+            </div>
+        )
     );
 
     const TextContent = (
@@ -53,7 +61,7 @@ export default function TwoColumnCard({ block, id }) {
     return (
         <div
             id={id}
-            className="w-screen flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-24 px-12 md:px-24 py-12 md:py-24"
+            className="w-screen flex flex-col gap-12 md:gap-24 px-12 md:px-24 py-12 md:py-24"
         >
             <div
                 className={`${

@@ -11,7 +11,7 @@ export default function Testimonial({ quote }) {
         <div className="bg-[#F9F8F4] col-span-full">
             <div className="text-center relative">
                 <div className="speech-bubble bg-white border-2 border-[#1E1E1E] rounded-lg relative p-6 lg:px-14 lg:py-12 max-w-full text-left shadow-[4px_4px_0_#1E1E1E]">
-                    <div className="text-lg font-bold text-black leading-tight">
+                    <div className="text-lg font-bold text-black leading-tight whitespace-pre-line">
                         "{quote.fields.content}"
                     </div>
                 </div>

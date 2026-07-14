@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import RenderBlock from "@/lib/renderBlock";
 import ArrowUpRight from "@/app/assets/arrowUpRight";
-import Image from "next/image";
 import ContactCTA from "@/app/components/contact-cta";
 import Testimonial from "@/app/components/testimonial";
 
@@ -65,7 +64,7 @@ export default async function ProjectPage({ params }) {
       {/* Main */}
       <div className="bg-[#F9F8F4]">
         <div className="px-12 md:px-24 py-12 md:py-24">
-          <div className="flex flex-col md:grid md:grid-cols-[2fr_1fr] text-center md:text-left md:gap-28">
+          <div className="flex flex-col md:grid md:grid-cols-[3fr_1fr] text-center md:text-left md:gap-28">
             <div className="pb-12 md:pb-0">
               <h2 className="font-bold text-4xl pb-8">
                 {fields.keyQuote}
@@ -74,7 +73,7 @@ export default async function ProjectPage({ params }) {
               <div className="whitespace-pre-line">{fields.summary}</div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mb-8">
               {fields?.software &&
                 <div className="flex flex-col gap-2">
                   <span className="font-bold caption text-xl">Systems</span>
