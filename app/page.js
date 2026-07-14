@@ -130,10 +130,10 @@ export default async function HomePage() {
             <div className="flex gap-2 mt-2 flex-wrap">
               {page.fields.highSkills.map((skill) => (
                 <span
-                  key={skill.fields.title}
+                  key={skill}
                   className="px-4 py-1 bg-[#FF6B9D22] text-[#FF6B9D] border border-[#FF6B9D44] rounded-full text-sm"
                 >
-                  {skill.fields.title}
+                  {skill}
                 </span>
               ))}
             </div>
@@ -143,10 +143,10 @@ export default async function HomePage() {
             <div className="flex gap-2 mt-2 flex-wrap">
               {page.fields.mediumSkills.map((skill) => (
                 <span
-                  key={skill.fields.title}
+                  key={skill}
                   className="px-4 py-1 bg-[#7EC8E322] text-[#7EC8E3] border border-[#7EC8E344] rounded-full text-sm"
                 >
-                  {skill.fields.title}
+                  {skill}
                 </span>
               ))}
             </div>
@@ -156,10 +156,10 @@ export default async function HomePage() {
             <div className="flex gap-2 mt-2 flex-wrap">
               {page.fields.lowSkills.map((skill) => (
                 <span
-                  key={skill.fields.title}
+                  key={skill}
                   className="px-4 py-1 bg-[#FFFFFF11] text-[#888] border border-[#555] rounded-full text-sm"
                 >
-                  {skill.fields.title}
+                  {skill}
                 </span>
               ))}
             </div>
