@@ -21,7 +21,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
                                 width={image.fields.file.details.image.width}
                                 height={image.fields.file.details.image.height}
                                 className="w-full rounded-2xl object-cover hover:cursor-pointer"
-                            />
+                            /> 
                         }
                     </div>
                 ) : (
