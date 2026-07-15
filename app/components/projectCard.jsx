@@ -13,9 +13,9 @@ export default function ProjectCard({ title, href, image, role, date }) {
 
     return (
         <Link className="h-full w-full block" href={href ? href : ''}>
-            <div className="h-full w-full flex flex-col min-h-[20rem]">
+            <div className="h-full w-full flex flex-col lg:min-h-[20rem]">
                 {image ? (
-                    <div className="w-full h-80 mb-4 relative overflow-hidden">
+                    <div className="w-full lg:h-100 mb-4 relative overflow-hidden">
 
                         {/* Image */}
                         {imageUrl && imageWidth && imageHeight ? (

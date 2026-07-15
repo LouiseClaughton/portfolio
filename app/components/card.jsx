@@ -54,6 +54,7 @@ export default function Card({ block, isEven }) {
             >
               <Image
                 src={`https:${fields.image1.fields.file.url}`}
+                alt={fields.title}
                 width={fields.image1.fields.file.details.image.width}
                 height={fields.image1.fields.file.details.image.height}
                 className="w-full rounded-2xl object-cover hover:cursor-pointer"
@@ -69,6 +70,7 @@ export default function Card({ block, isEven }) {
             >
               <Image
                 src={`https:${fields.image2.fields.file.url}`}
+                alt={fields.title}
                 width={fields.image2.fields.file.details.image.width}
                 height={fields.image2.fields.file.details.image.height}
                 className="w-full rounded-2xl object-cover hover:cursor-pointer"
@@ -85,10 +87,10 @@ export default function Card({ block, isEven }) {
         >
           <Image
             src={expandedImage}
-            alt="Expanded image"
+            alt={fields.title}
             width={1600}
             height={1200}
-            className="max-w-full max-h-full object-contain lg:object-cover rounded-2xl aspect-video"
+            className="max-w-full max-h-full object-contain lg:object-cover rounded-2xl"
           />
         </div>
       )}
