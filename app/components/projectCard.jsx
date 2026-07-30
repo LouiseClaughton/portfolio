@@ -24,7 +24,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
                                 alt={title || "Project image"}
                                 width={imageWidth}
                                 height={imageHeight}
-                                className="w-full rounded-2xl object-cover hover:cursor-pointer"
+                                className="rounded-2xl object-cover hover:cursor-pointer max-h-64 w-full object-top"
                             />
                         ) : (
                             <Image
@@ -32,7 +32,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
                                 alt={title}
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
-                                className="object-cover transition-opacity duration-500 object-top rounded-xl"
+                                className="object-cover transition-opacity duration-500 object-top rounded-xl w-full max-h-64"
                             />
                         )}
                     </div>

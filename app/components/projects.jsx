@@ -9,17 +9,22 @@ function ProjectItem({ project, index, grid }) {
         threshold: 0.15,
     });
 
+    const columns = 3;
+    const column = index % columns;
+
     return (
         <div
             ref={ref}
             className={`
                 ${grid ?
                     `md:transition-all md:duration-700 md:ease-out
-                    ${isVisible ? "md:opacity-100 md:translate-y-0" : "md:opacity-0 md:translate-y-10"}
-                    ${index % 2 === 0 ? "" : "md:translate-y-16"}`
+                    ${isVisible ? "md:opacity-100 md:translate-y-0" : "md:opacity-0 md:translate-y-10"}`
                 : ''
                 }
             `}
+            style={{
+                transitionDelay: `${column * 250}ms`,
+            }}
         >
             <ProjectCard
                 title={project.fields.title}
@@ -35,7 +40,7 @@ function ProjectItem({ project, index, grid }) {
 
 export default function Projects({ grid = true, projects = [] }) {
     return (
-        <div className={`py-12 ${grid ? 'flex flex-col md:grid md:grid-cols-2 gap-14 md:gap-28 px-12 md:px-24 pb-56' : 'flex flex-col gap-12 md:gap-20'}`}>
+        <div className={`py-12 ${grid ? 'flex flex-col md:grid md:grid-cols-3 gap-12 px-12 md:px-24 pb-56' : 'flex flex-col gap-12 md:gap-20'}`}>
             {projects.map((project, index) => (
                 <ProjectItem
                     key={project.sys.id}
