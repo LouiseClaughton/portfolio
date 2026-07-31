@@ -3,7 +3,7 @@ import ProjectCard from "./projectCard";
 export default function FeaturedProjects({ projects }) {
     return (
         <div className="flex justify-center gap-12 flex-col lg:flex-row">
-            {projects.map((project, index) => {
+            {projects.map((project) => {
                 return (
                     <div
                         key={project.sys.id}

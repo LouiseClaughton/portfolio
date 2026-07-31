@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function ProjectCard({ title, href, image, role, date }) {
+export default function ProjectCard({ title, href, image, imageClasses, role, date }) {
     const year = new Date(date).getFullYear();
 
     const imageUrl = image?.fields?.file?.url;
@@ -13,7 +13,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
 
     return (
         <Link className="h-full w-full block" href={href ? href : ''}>
-            <div className="h-full w-full flex flex-col lg:min-h-[20rem]">
+            <div className="h-full w-full grid grid-rows-[3fr_1fr]">
                 {image ? (
                     <div className="w-full mb-4 relative overflow-hidden">
 
@@ -24,7 +24,7 @@ export default function ProjectCard({ title, href, image, role, date }) {
                                 alt={title || "Project image"}
                                 width={imageWidth}
                                 height={imageHeight}
-                                className="rounded-2xl object-cover hover:cursor-pointer max-h-64 w-full object-top"
+                                className={`rounded-2xl object-cover hover:cursor-pointer w-full object-top h-full ${imageClasses ? imageClasses : ''}`}
                             />
                         ) : (
                             <Image

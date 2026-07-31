@@ -16,7 +16,7 @@ export default function Footer() {
                 />
             </a>
             <nav>
-                <ul className="list-none flex gap-8">
+                <ul className="flex flex-wrap gap-4 list-none w-[60%] justify-center justify-self-center md:w-full md:justify-normal md:justify-self-normal">
                     <li className="list-none"><Link href="/" className="hover:text-[#0092FF] transition-colors">Home</Link></li>
                     <li className="list-none"><Link href="/about" className="hover:text-[#0092FF] transition-colors">About</Link></li>
                     <li className="list-none"><Link href="/projects" className="hover:text-[#0092FF] transition-colors">Projects</Link></li>

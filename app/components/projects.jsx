@@ -17,7 +17,7 @@ function ProjectItem({ project, index, grid }) {
             ref={ref}
             className={`
                 ${grid ?
-                    `md:transition-all md:duration-700 md:ease-out
+                    `md:transition-all md:duration-700 md:ease-out max-h-[16rem]
                     ${isVisible ? "md:opacity-100 md:translate-y-0" : "md:opacity-0 md:translate-y-10"}`
                 : ''
                 }
@@ -33,6 +33,7 @@ function ProjectItem({ project, index, grid }) {
                 image={project.fields.heroImage}
                 role={project.fields.role}
                 href={`/projects/${project.fields.slug}`}
+                imageClasses="max-h-64"
             />
         </div>
     );
