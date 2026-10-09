@@ -16,6 +16,7 @@ export default function FeaturedProjects({ projects }) {
                             image={`https:${project.fields.heroImage?.fields?.file?.url}`}
                             role={project.fields.role}
                             href={`/projects/${project.fields.slug}`}
+                            software={project.fields.software}
                         />
                     </div>
                 );

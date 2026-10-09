@@ -34,6 +34,7 @@ function ProjectItem({ project, index, grid }) {
                 role={project.fields.role}
                 href={`/projects/${project.fields.slug}`}
                 imageClasses="max-h-64"
+                software={project.fields.software}
             />
         </div>
     );

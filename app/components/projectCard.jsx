@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function ProjectCard({ title, href, image, imageClasses, role, date }) {
+export default function ProjectCard({ title, href, image, imageClasses, role, date, software }) {
     const year = new Date(date).getFullYear();
 
     const imageUrl = image?.fields?.file?.url;
@@ -41,9 +41,18 @@ export default function ProjectCard({ title, href, image, imageClasses, role, da
                 )}
                 <div>
                     <h2 className="font-bold text-xl">{title}</h2>
-                    {role && year && 
-                        <span className="caption text-lg">{role} / {year}</span>
-                    }
+                    <div>
+                        {role && year && 
+                            <span className="caption text-lg">{role} / {year}</span>
+                        }
+                    </div>
+                    <div>
+                        {software &&
+                            <span className="text-xs text-gray-600">
+                                {software?.join(", ")}
+                            </span>
+                        }
+                    </div>
                 </div>
             </div>
         </Link>
